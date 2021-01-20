@@ -123,6 +123,7 @@ const Form = styled.form`
   flex-direction: column;
   width: 30%;
   margin-bottom: 30px;
+  font-family: 'Spectral', serif;
   margin: 200px auto;
   align-items: center;
   justify-content: center;

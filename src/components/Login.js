@@ -5,6 +5,7 @@ import { SubmitButton } from "./SubmitButton";
 import { InputField } from "./InputField";
 import { UserProfile } from "./UserProfile";
 import { user } from "../reducers/user";
+//import { Header } from "components/Header"
 
 import styled from "styled-components";
 import { rgba } from "polished";
@@ -55,7 +56,7 @@ export const Login = () => {
       {logInSuccess === true ? (
         <UserProfile />
       ) : (
-        <Image>
+        
           <Form onSubmit={handleFormSubmit}>
             <Text>Log in</Text>
             <InputField
@@ -86,20 +87,11 @@ export const Login = () => {
             )}
             <SubmitButton title="Log in" />
           </Form>
-        </Image>
       )}
-      ;
     </>
   );
 };
 
-const Image = styled.main`
-  background-image: url("${process.env.PUBLIC_URL + "/books.jpg"}");
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-`;
 const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -107,6 +99,7 @@ const Form = styled.form`
   margin-bottom: 30px;
   margin: 100px auto;
   align-items: center;
+  font-family: 'Spectral', serif;
   justify-content: center;
   padding: 5px;
   border-radius: 5px;
