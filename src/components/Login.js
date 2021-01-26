@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
-import { SubmitButton } from "./SubmitButton";
+import { LSbutton } from "./LSbutton";
 import { InputField } from "./InputField";
 import { UserProfile } from "./UserProfile";
 import { user } from "../reducers/user";
-//import { Header } from "components/Header"
+import { Header2 } from "components/Header2";
+import { Footer } from "../components/Footer";
 
 import styled from "styled-components";
 import { rgba } from "polished";
@@ -53,12 +55,18 @@ export const Login = () => {
 
   return (
     <>
-      {logInSuccess === true ? (
-        <UserProfile />
-      ) : (
-        
+      <Header2 />
+      <Main>
+        <div className="back">
+          <Link to="/" exact="true">
+            HOME
+          </Link>
+        </div>
+        <Text>Hey, reader.</Text>
+        {logInSuccess === true ? (
+          <UserProfile />
+        ) : (
           <Form onSubmit={handleFormSubmit}>
-            <Text>Log in</Text>
             <InputField
               name="email"
               label="Email"
@@ -85,25 +93,49 @@ export const Login = () => {
                 </Text>
               </span>
             )}
-            <SubmitButton title="Log in" />
           </Form>
-      )}
+        )}
+        <LSbutton title="Log in" />
+        <TextBelow>
+          New around here?
+          <a class="link" href="/signup">
+            Sign up today.
+          </a>
+        </TextBelow>
+        <Footer />
+      </Main>
     </>
   );
 };
 
+const Main = styled.main`
+  background-color: #f2c84b;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  overflow: hidden;
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+`;
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 30%;
+  min-height: 30vh;
   margin-bottom: 30px;
   margin: 100px auto;
   align-items: center;
-  font-family: 'Spectral', serif;
+  font-family: "Spectral", serif;
   justify-content: center;
   padding: 5px;
-  border-radius: 5px;
-  background-color: ${rgba("#a1bdc8", 0.5)};
+  border-radius: 30px;
+  border: 1px solid #b1b0ae;
+  -webkit-box-shadow: 2px 6px 15px 3px rgba(0, 0, 0, 0.39);
+  box-shadow: 2px 6px 15px 3px rgba(0, 0, 0, 0.39);
+  //   background-color: ${rgba("#F2B9B3", 0.4)};
+  background-color: #f2b9b3;
   @media (max-width: 950px) {
     margin: 30px auto;
     width: 60%;
@@ -118,16 +150,39 @@ const Form = styled.form`
 const Text = styled.text`
   display: flex;
   padding: 10px;
-  font-size: 20px;
+  font-size: 50px;
   flex-direction: column;
-  color: #a73e42;
+  color: #f24e29;
   font-weight: bold;
-  font-family: 'Spectral', serif;
+  font-family: "Spectral", serif;
   align-items: center;
   justify-content: center;
   text-align: center;
-  text-transform: uppercase;
-  margin-top: 30px;
+  margin-top: 90px;
+  margin-bottom: -25px;
+  letter-spacing: 2px;
+  @media (max-width: 950px) {
+    font-size: 17px;
+    margin-top: 10px;
+  }
+  @media (max-width: 660px) {
+    font-size: 17px;
+    margin-top: 10px;
+  }
+`;
+const TextBelow = styled.text`
+  display: flex;
+  padding: 10px;
+  font-size: 20px;
+  flex-direction: column;
+  color: #000;
+  font-weight: initial;
+  font-family: "Spectral", serif;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 90px;
+  margin-bottom: -25px;
   letter-spacing: 2px;
   @media (max-width: 950px) {
     font-size: 17px;

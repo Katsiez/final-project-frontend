@@ -6,28 +6,29 @@ import {Header2} from "components/Header2"
 
 export const Header = () => {
   return (
+    <>
     <Nav>
         <ButtonContainer>
-		<Redirect to="/wishlist">
-		<User src="../assets/wishlist.png" alt="logo"></User>
-            <SubmitButton title="Wishlist" />
-          </Redirect>
           <Redirect to="/login">
-		  <User src="../assets/user.png" alt="logo"></User>
+		  {/* <User src="../assets/user.png" alt="logo"></User> */}
             <SubmitButton title="Login"/>
-          </Redirect> 
+          </Redirect>
           <Redirect to="/signup">
             <SubmitButton title="Sign Up" />
           </Redirect>
         </ButtonContainer>
 		<Header2/>
     </Nav>
+    <Logo src="../assets/logo.svg" alt="logo"></Logo>
 
+</>
   );
 };
 
 const ButtonContainer = styled.div`
 padding-right: 10px;
+margin-top: 10px;
+margin-bottom: -10px;
   @media (max-width: 660px) {
     align-self: center;
     margin: 5px;
@@ -39,6 +40,7 @@ const Redirect = styled(Link)`
 
 const Nav = styled.main`
   display: flex;
+  float: left;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -47,7 +49,17 @@ const Nav = styled.main`
   background-color: #c5e1ec;
 `;
 
-const User = styled.img`
-  position: relative;
-  width: 16px;
+const Logo = styled.img`
+display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+  bottom: 0;
+
+  @media (max-width: 667px) {
+    width: 250px;
+  }
+  @media (min-width: 1024px) {
+    width: 360px;
+  }
 `;

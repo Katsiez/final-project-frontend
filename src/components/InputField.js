@@ -21,21 +21,21 @@ export const InputField = ({
   );
 };
 const Input = styled.input`
-  border-bottom: 10px solid #a73e42;
+  border-bottom: 5px solid #14A647;
   border-top: none;
   border-left: none;
   border-right: none;
   text-decoration: none;
-  border-radius: 20px;
-  background-color: ${rgba("#a1bdc8", 0.5)};
+  border-radius: 15px;
+  background-color: ${rgba("#fff", 0.3)};
   box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 20px;
   width: 70%;
   padding: 10px;
-  font-family: "Xanh Mono", monospace;
-  margin: 30px;
+  font-family: "Spectral", serif;
+  margin: 20px;
   @media (max-width: 950px) {
     margin: 10px;
     font-size: 16px;

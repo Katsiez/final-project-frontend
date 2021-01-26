@@ -5,24 +5,30 @@ import { SubmitButton } from "components/SubmitButton";
 
 export const Header2 = () => {
   return (
+    <>
     <Nav>
         <ButtonContainer>
-		<Redirect to="/wishlist">
-            <SubmitButton title="Wishlist" />
-          </Redirect>
-          <Redirect to="/login">
-            <SubmitButton title="Login"/>
+        <Redirect to="/books">
+            <SubmitButton title="All books"/>
           </Redirect> 
-          <Redirect to="/signup">
-            <SubmitButton title="Sign Up" />
+          <Redirect to="/books/bestsellers">
+            <SubmitButton title="Bestsellers"/>
+          </Redirect> 
+          <Redirect to="/books/new_releases">
+            <SubmitButton title="New releases" />
+          </Redirect>
+          <Redirect to="/about">
+            <SubmitButton title="About Bookmark Reads" />
           </Redirect>
         </ButtonContainer>
     </Nav>
+    </>
   );
 };
 
 const ButtonContainer = styled.div`
 padding-right: 10px;
+margin-bottom: -5px;
   @media (max-width: 660px) {
     align-self: center;
     margin: 5px;
@@ -39,5 +45,6 @@ const Nav = styled.main`
   justify-content: center;
   width: 100%;
   padding: 0;
-  background-color: #cdd7e0;
+  background-color: #e6e9ef;
+  box-shadow:  3px 2px 4px #ccc;
 `;

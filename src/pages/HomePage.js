@@ -7,12 +7,11 @@ export const HomePage = () => {
   return (
     <>
       <Header />
-      <Video autoPlay playsInline muted loop>
-        <source src="../assets/books.mp4" type="video/mp4"></source>
-      </Video>
+      {/* <Video autoPlay playsInline muted loop> */}
+        {/* <source src="../assets/books.mp4" type="video/mp4"></source> */}
+      {/* </Video> */}
       <IntroPage>
-        <Logo src="../assets/logo1.png" alt="logo"></Logo>
-        <ToStore to="/store">Shop books</ToStore>
+        <AllBooks to="/books">Shop all books</AllBooks>
       </IntroPage>
     </>
   );
@@ -23,7 +22,7 @@ const IntroPage = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #dbc8fd;
+  background: #F2B9B3;
   min-height: 50vh;
   width: 40%;
   margin: 150px auto;
@@ -40,17 +39,7 @@ const IntroPage = styled.section`
   }
 `;
 
-const Logo = styled.img`
-  position: relative;
-  @media (min-width: 667px) {
-    width: 200px;
-  }
-  @media (min-width: 1024px) {
-    width: 400px;
-  }
-`;
-
-const ToStore = styled(Link)`
+const AllBooks = styled(Link)`
   position: relative;
   display: flex;
   align-items: center;
@@ -63,7 +52,7 @@ const ToStore = styled(Link)`
   font-family: "Spectral", serif;
   font-size: 20px;
   padding: 20px 20px;
-  background: #f27457;
+  background: #14A647;
   text-decoration: none;
   color: black;
   margin: 20px;
@@ -72,18 +61,22 @@ const ToStore = styled(Link)`
     transition: ease-in-out 0.3s;
     background: #f23c13;
   }
-`;
-
-export const Video = styled.video`
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  overflow: hidden;
-  object-fit: cover;
-  width: 100%;
-  height: 100vh;
-  z-index: -1;
   @media (max-width: 667px) {
-    display:none;
+	width: 200px;
+	font-size: 17px;
   }
 `;
+
+// export const Video = styled.video`
+//   display: flex;
+//   flex-direction: column;
+//   position: absolute;
+//   overflow: hidden;
+//   object-fit: cover;
+//   width: 100%;
+//   height: 100vh;
+//   z-index: -1;
+//   @media (max-width: 667px) {
+//     display:none;
+//   }
+// `;

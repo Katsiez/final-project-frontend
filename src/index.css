@@ -5,9 +5,83 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+ol,
+ul,
+li {
+  list-style: none;
+  list-style-type: none;
+  font-family: "Spectral", serif;
+  text-rendering: geometricprecision;
+  -webkit-font-smoothing: antialiased;
+}
+.link-group {
+  display: flex;
+  flex-direction: column;
+  align-self: initial;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 150;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  transition: ease-in-out 0.4s;
+  color: #f24e29;
+}
+.first-last {
+  width: 80%;
+  display: flex;
+}
+a.link {
+  color: #000;
+}
+a.link:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.all-books {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: auto;
+  justify-content: space-around;
+  font-family: "Spectral", serif;
+}
+.book-card {
+  border: 1px solid #000;
+  box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.24);
+  background-color: white;
+  width: 25%;
+  max-width: 500px;
+  margin: 0 10px 30px 10px;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 8px;
+}
+.book-title {
+  font-weight: bold;
+}
+
+.book-author {
+  color: #141313;
+  text-decoration: underline;
+  font-family: "Spectral", serif;
+}
+.back {
+  padding: 15px;
+  margin-left: 15px;
+  font-family: "Spectral", serif;
+  font-size: 20px;
+  color: #000;
 }

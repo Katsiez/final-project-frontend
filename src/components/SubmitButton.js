@@ -10,23 +10,26 @@ export const SubmitButton = ({ title, onClick, onSubmit }) => {
 };
 
 const MainContainer = styled.button`
-	display: inline-block;
-	flex-direction: row;
-	flex-wrap: wrap;
-	border: none;
-	background: none;
-	 &:hover {
-	cursor: pointer;
-	transition: ease-in-out .3s;
-	  }	
+  display: inline-block;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: none;
+  background: none;
+  &:hover {
+    cursor: pointer;
+	transition: ease-in-out 0.3s;
+  }
 `;
 const TextField = styled.p`
-  font-family: 'Spectral', serif;
-display: flex;
-flex-direction: flex-start;
-font-size: 12px;
-  color: #F23C13;
+  font-family: "Spectral", serif;
+  display: flex;
+  flex-direction: flex-start;
+  font-size: 13px;
+  margin: 10px;
+  color: #000;
   &:hover {
-    color: #d2c5ab;
-  }
+	color: #F23C13;
+	transition: ease-in-out 0.4s; 
+	margin: 0.7em;
+}
 `;
