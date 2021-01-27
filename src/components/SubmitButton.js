@@ -24,9 +24,9 @@ const TextField = styled.p`
   font-family: "Spectral", serif;
   display: flex;
   flex-direction: flex-start;
-  font-size: 13px;
+  font-size: 14px;
   margin: 10px;
-  color: #000;
+  color: #fafafa;
   &:hover {
 	color: #F23C13;
 	transition: ease-in-out 0.4s; 

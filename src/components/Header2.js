@@ -11,7 +11,7 @@ export const Header2 = () => {
         <Redirect to="/books">
             <SubmitButton title="All books"/>
           </Redirect> 
-          <Redirect to="/books/bestsellers">
+          <Redirect to="/books/bestseller">
             <SubmitButton title="Bestsellers"/>
           </Redirect> 
           <Redirect to="/books/new_releases">

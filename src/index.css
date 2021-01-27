@@ -35,7 +35,7 @@ a {
 }
 a:hover {
   transition: ease-in-out 0.4s;
-  color: #f24e29;
+  color: #a3946d;
 }
 .first-last {
   width: 80%;
@@ -84,4 +84,13 @@ a.link:hover {
   font-family: "Spectral", serif;
   font-size: 20px;
   color: #000;
+}
+
+img.image{
+  box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.24);
+}
+
+a.books-link:hover {
+  text-decoration: underline 1px solid;
+  color:  #222;
 }

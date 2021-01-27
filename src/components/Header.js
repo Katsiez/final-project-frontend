@@ -10,7 +10,7 @@ export const Header = () => {
     <Nav>
         <ButtonContainer>
           <Redirect to="/login">
-		  {/* <User src="../assets/user.png" alt="logo"></User> */}
+		  <User src="../assets/user.png" alt="logo"></User>
             <SubmitButton title="Login"/>
           </Redirect>
           <Redirect to="/signup">
@@ -20,7 +20,6 @@ export const Header = () => {
 		<Header2/>
     </Nav>
     <Logo src="../assets/logo.svg" alt="logo"></Logo>
-
 </>
   );
 };
@@ -46,13 +45,14 @@ const Nav = styled.main`
   justify-content: flex-end;
   width: 100%;
   padding: 0;
-  background-color: #c5e1ec;
+  background-color: #38392b;
 `;
 
 const Logo = styled.img`
 display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: flex-end;
   padding: 0;
   bottom: 0;
 
@@ -63,3 +63,6 @@ display: flex;
     width: 360px;
   }
 `;
+const User = styled.image`
+  width: 50px;
+`

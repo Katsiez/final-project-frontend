@@ -110,6 +110,7 @@ export const Login = () => {
 
 const Main = styled.main`
   background-color: #f2c84b;
+
   display: flex;
   flex-direction: column;
   position: absolute;

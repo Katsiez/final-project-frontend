@@ -8,7 +8,9 @@ import { HomePage } from "./pages/HomePage";
 import { Login } from "./components/Login";
 import { SignUp } from "./components/SignUp";
 import { Books } from "./components/Books"
-import { SingleBook } from "./components/SingleBook"
+import { SingleBook } from "./pages/SingleBook"
+import { Bestsellers } from "./pages/Bestsellers"
+
 
 const reducer = combineReducers({ user: user.reducer });
 const store = configureStore({ reducer });
@@ -35,8 +37,12 @@ export const App = () => {
             <Books/>
           </Route>
 
-          <Route path="/books/:bookID">
+          <Route path="/books/id/:bookID" exact>
             <SingleBook/>
+          </Route>
+
+          <Route path="/books/bestseller" exact>
+            <Bestsellers/>
           </Route>
           
         </Switch>

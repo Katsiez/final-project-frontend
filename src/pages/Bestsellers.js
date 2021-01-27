@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const SingleBook = () => {
-  const { bookID } = useParams();
+export const Bestsellers = () => {
+  //const { bestseller } = useParams();
   const [book, setBook] = useState([]);
-
   useEffect(() => {
-    fetch(`http://localhost:8000/books/book/${bookID}`)
+    fetch("http://localhost:8000/books/bestseller/bestseller")
       .then((response) => response.json())
       .then((json) => {
         setBook(json);
@@ -15,21 +14,28 @@ export const SingleBook = () => {
       .catch(() => {
         console.error();
       });
-  }, [bookID]);
+  }, []);
 
   return (
     <Main>
+      <div className="back">
+        <Link to="/" exact="true">
+          HOME
+        </Link>
+      </div>
       <div className="back">
         <Link to="/books" exact="true">
           BACK TO BOOKS
         </Link>
       </div>
       <Text>
-        <p className="book-title">{book.title}</p>
+        <p className="book-title">{book.bestseller}</p>
+		<p className="book-rating">{book.average_rating}</p>
       </Text>
+
       <section className="all-books">
-        <div className="book-card" key={`book${book._id}`}>
-          <Link to={`/books/${book.bookID}`}>
+        <div className="book-card" key={`book${book._bestseller==="bestseller"}`}>
+          <Link to={`/books/id/${book.bestseller==="bestseller"}`}>
             <p className="book-author">{book.authors}</p>
             <p className="book-genre">{book.genre}</p>
             <p className="book-synopsis">{book.synopsis}</p>
