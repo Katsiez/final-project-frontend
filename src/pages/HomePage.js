@@ -38,10 +38,16 @@ const IntroPage = styled.section`
   box-shadow: 5px 15px 25px 20px rgba(0, 0, 0, 0.24);
   margin: 150px auto;
   position: relative;
-  @media (max-width: 667px) {
+  @media screen and (max-width: 768px) {
     background-image: url("${process.env.PUBLIC_URL + "../assets/green.jpg"}");
     width: 350px;
     min-height: 700px;
+    background-size: cover;
+    background-position: center center;
+  }
+  @media screen and (max-width: 1201px) {
+    width: 1000px;
+    min-height: 900px;
     background-size: cover;
     background-position: center center;
   }
@@ -50,6 +56,7 @@ const IntroPage = styled.section`
 const AllBooks = styled(Link)`
   position: relative;
   display: flex;
+  // align-items: center;
   border: 1px solid black;
   height: 20px;
   width: 20%;
