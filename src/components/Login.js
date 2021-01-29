@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 
 import { LSbutton } from "./LSbutton";
 import { InputField } from "./InputField";
 import { UserProfile } from "./UserProfile";
 import { user } from "../reducers/user";
-import { Header2 } from "components/Header2";
-import { Footer } from "../components/Footer";
+import { Sidebar } from "components/Sidebar/Sidebar";
+//import { Footer } from "../components/Footer";
 
 import styled from "styled-components";
 import { rgba } from "polished";
@@ -55,13 +54,8 @@ export const Login = () => {
 
   return (
     <>
-      <Header2 />
+      <Sidebar />
       <Main>
-        <div className="back">
-          <Link to="/" exact="true">
-            HOME
-          </Link>
-        </div>
         <Text>Hey, reader.</Text>
         {logInSuccess === true ? (
           <UserProfile />
@@ -102,31 +96,31 @@ export const Login = () => {
             Sign up today.
           </a>
         </TextBelow>
-        <Footer />
       </Main>
     </>
   );
 };
-
 const Main = styled.main`
   background-color: #f2c84b;
-
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   overflow: hidden;
   object-fit: cover;
-  width: 100%;
-  height: 100vh;
+  
   z-index: -1;
 `;
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 30%;
-  min-height: 30vh;
+  min-height: 35vh;
   margin-bottom: 30px;
-  margin: 100px auto;
+  margin: 80px auto;
   align-items: center;
   font-family: "Spectral", serif;
   justify-content: center;
@@ -159,7 +153,6 @@ const Text = styled.text`
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 90px;
   margin-bottom: -25px;
   letter-spacing: 2px;
   @media (max-width: 950px) {
@@ -171,19 +164,21 @@ const Text = styled.text`
     margin-top: 10px;
   }
 `;
+
 const TextBelow = styled.text`
   display: flex;
-  padding: 10px;
+  padding: 9px;
   font-size: 20px;
   flex-direction: column;
   color: #000;
-  font-weight: initial;
+  font-style: italic;
+  font-weight: 400;
   font-family: "Spectral", serif;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 90px;
-  margin-bottom: -25px;
+  margin-top: 30px;
+  margin-bottom: -20px;
   letter-spacing: 2px;
   @media (max-width: 950px) {
     font-size: 17px;

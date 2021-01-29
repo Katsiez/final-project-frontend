@@ -1,15 +1,25 @@
+import { Navbar } from "components/Navbar/Navbar";
+import { Sidebar } from "components/Sidebar/Sidebar";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+const BESTSELLERS = "http://localhost:8000/books/bestseller/bestseller";
+
+
 export const Bestsellers = () => {
   //const { bestseller } = useParams();
-  const [book, setBook] = useState([]);
+  const [books, setBooks] = useState([]);
+  const [isOpen, setIsOpen] = useState(false)
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
+
   useEffect(() => {
-    fetch("http://localhost:8000/books/bestseller/bestseller")
+    fetch(BESTSELLERS)
       .then((response) => response.json())
       .then((json) => {
-        setBook(json);
+        setBooks(json);
       })
       .catch(() => {
         console.error();
@@ -17,58 +27,72 @@ export const Bestsellers = () => {
   }, []);
 
   return (
+    <>
+    <Sidebar isOpen={isOpen} toggle={toggle}/>
+      <Navbar toggle={toggle}/>
     <Main>
-      <div className="back">
-        <Link to="/" exact="true">
-          HOME
-        </Link>
-      </div>
-      <div className="back">
-        <Link to="/books" exact="true">
-          BACK TO BOOKS
-        </Link>
-      </div>
-      <Text>
-        <p className="book-title">{book.bestseller}</p>
-		<p className="book-rating">{book.average_rating}</p>
-      </Text>
-
+      <Text>Browse our bestsellers.</Text>
+      <TextUnder><p>Choose a book from our current collection,or simply<br/><a class="books-link" href="/signup">sign up</a> to get notified when new books arrive!</p>
+          </TextUnder>
       <section className="all-books">
-        <div className="book-card" key={`book${book._bestseller==="bestseller"}`}>
-          <Link to={`/books/id/${book.bestseller==="bestseller"}`}>
-            <p className="book-author">{book.authors}</p>
-            <p className="book-genre">{book.genre}</p>
-            <p className="book-synopsis">{book.synopsis}</p>
-          </Link>
-        </div>
+        {books.map((book) => (
+          <div className="book-card" key={`book${book._id}`}>
+            <Link to={`/books/id/${book.bookID}`}>
+              <p className="book-title">{book.title}</p>
+              <p className="book-author">{book.authors}</p>
+            </Link>
+          </div>
+        ))}
       </section>
     </Main>
+    </>
   );
 };
 
 const Main = styled.main`
-  background-color: #d0ded8;
-  min-height: 100vh;
+  background-color: #bec4bf;
+  //fix the white space there
 `;
-const Text = styled.text`
+const Text = styled.title`
   display: flex;
-  padding: 10px;
+  text-align: center;
+    padding: 60px 0 40px;
   font-size: 50px;
   flex-direction: column;
-  color: #ff4466;
+  color: #222;
   font-weight: bold;
   font-family: "Spectral", serif;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin-top: 20px;
-  margin-bottom: 70px;
   @media (max-width: 950px) {
-    font-size: 17px;
+    font-size: 30px;
     margin-top: 10px;
   }
   @media (max-width: 660px) {
-    font-size: 17px;
+    font-size: 30px;
+    margin-top: 10px;
+  }
+`;
+const TextUnder = styled.title`
+  display: flex;
+  text-align: center;
+  font-size: 20px;
+  flex-direction: column;
+  margin-bottom: 20px;
+  line-height: 2rem;
+  color: #222;
+  font-family: "Spectral", serif;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  @media (max-width: 950px) {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  @media (max-width: 660px) {
+    font-size: 18px;
     margin-top: 10px;
   }
 `;

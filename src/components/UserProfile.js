@@ -6,7 +6,7 @@ import { rgba } from "polished";
 
 import { user } from "../reducers/user";
 import { SubmitButton } from "./SubmitButton";
-import { Header } from "./Header";
+import { Navbar } from "./Navbar/Navbar";
 
 const URL = "http://localhost:8000/signup";
 
@@ -60,7 +60,7 @@ export const UserProfile = () => {
           <Text1>{`${secretMessage}`}</Text1>
         </Image>
       ) : (
-        <Header />
+        <Navbar />
       )}
     </>
   );

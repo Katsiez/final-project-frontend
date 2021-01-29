@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Navbar } from "./Navbar/Navbar";
+import { Sidebar } from "./Sidebar/Sidebar";
 
 const BOOKS = "http://localhost:8000/books";
 
 export const Books = () => {
   const [books, setBooks] = useState([]);
+  const [isOpen, setIsOpen] = useState(false)
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
 
   useEffect(() => {
     fetch(BOOKS)
@@ -16,12 +22,10 @@ export const Books = () => {
   }, []);
 
   return (
+    <>
+     <Sidebar isOpen={isOpen} toggle={toggle}/>
+      <Navbar toggle={toggle}/>
     <Main>
-      <div className="back">
-        <Link to="/" exact="true">
-          HOME
-        </Link>
-      </div>
       <Text>Browse current favourite reads.</Text>
       <TextUnder><p>Choose a book from our current collection,or simply<br/><a class="books-link" href="/signup">sign up</a> to get notified when new books arrive!</p>
           </TextUnder>
@@ -36,6 +40,7 @@ export const Books = () => {
         ))}
       </section>
     </Main>
+    </>
   );
 };
 

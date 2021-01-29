@@ -1,27 +1,35 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Header } from "../components/Header";
+import { Navbar } from "../components/Navbar/Navbar";
+import { Sidebar } from "components/Sidebar/Sidebar";
+import { Banner } from "components/Banner";
+import { Footer } from "components/Footer/Footer";
 
 export const HomePage = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
   return (
     <>
-      <Header />
       {/* <Video autoPlay playsInline muted loop> 
         <source src="../assets/books.mp4" type="video/mp4"></source> 
      </Video> */}
-      <Section>
+     <Banner/>
+      <Sidebar isOpen={isOpen} toggle={toggle}/>
+      <Navbar toggle={toggle}/>
+      <TextSection>
         <Text>Books were always cool.</Text>
         <TextUnder>
           But you knew that already. Looking for your next cozy read? Check out
           our store and choose a book from the finest picks.
         </TextUnder>
-      </Section>
-
-      <IntroPage>
         <AllBooks to="/books">Shop all books</AllBooks>
-      </IntroPage>
-      <Section2 />
+      </TextSection>
+      <IntroPage/>
+      <BlockSection />
+      <Footer/>
     </>
   );
 };
@@ -31,12 +39,12 @@ const IntroPage = styled.section`
   align-items: center;
   justify-content: center;
   background-image: url("${process.env.PUBLIC_URL + "../assets/read.jpg"}");
-  min-height: 1000px;
-  width: 1500px;
+  min-height: 800px;
+  width: 1100px;
   background-size: cover;
   background-position: center center;
   box-shadow: 5px 15px 25px 20px rgba(0, 0, 0, 0.24);
-  margin: 150px auto;
+  margin: 20px auto;
   position: relative;
   @media screen and (max-width: 768px) {
     background-image: url("${process.env.PUBLIC_URL + "../assets/green.jpg"}");
@@ -54,46 +62,44 @@ const IntroPage = styled.section`
 `;
 
 const AllBooks = styled(Link)`
-  position: relative;
-  display: flex;
-  // align-items: center;
-  border: 1px solid black;
-  height: 20px;
-  width: 20%;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-family: "Spectral", serif;
-  font-size: 20px;
-  padding: 20px;
-  background: #736926;
-  text-decoration: none;
-  z-index: 20;
-  color: black;
-  transition: all 0.2s ease-in-out;
-  &:hover {
-    transition: ease-in-out 0.3s;
-    background: #8b4b30;
-  }
-  @media (max-width: 667px) {
-    background: #736926;
-    height: 20px;
-    width: 80%;
-  }
-  
+font-family: "Spectral", serif;
+font-size: 20px;
+font-weight: lighter;
+line-height: 1.2em;
+display: flex;
+width: 15%;
+height: 5vh;
+color: #222;
+padding: 2px;
+background-color:#bd9478;
+position: relative;
+margin: 30px auto;
+margin-bottom: -10px;
+text-align: center;
+align-items: center;
+justify-content: center;
+&:hover {
+	transition: all 0.3s ease-in-out;
+	background: #bb7b6a;
+	color: #010606;
+}
+@media (max-width: 667px) {
+  font-size: 15px;
+  width: 70%;
+}
 `;
 
-const Section = styled.section`
-  padding: 80px;
+const TextSection = styled.section`
+padding: 50px 80px;
   @media (max-width: 667px) {
     padding: 20px;
   }
 `;
-const Section2 = styled.section`
+const BlockSection = styled.section`
   background-color: #c3cbc9;
-  min-height: 80vh;
+  height: 80vh;
   max-width: 100%;
-  margin-top: -1000px;
+  margin-top: -600px;
 `;
 
 const Text = styled.p`
@@ -120,6 +126,7 @@ const TextUnder = styled.p`
   display: flex;
   width: 40%;
   color: #222;
+  padding-bottom: 20px;
   margin: 15px auto;
   text-align: center;
   align-items: center;

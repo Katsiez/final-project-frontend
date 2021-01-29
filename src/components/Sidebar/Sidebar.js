@@ -1,24 +1,24 @@
 import React from 'react'
 import {SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarLink, SideBtnWrap, SidebarRoute} from "./SidebarElements"
 
-export const Sidebar = () =>{
+export const Sidebar = ({isOpen, toggle}) =>{
 	return (
-		<SidebarContainer>
-			<Icon>
+		<SidebarContainer isOpen={isOpen} onClick={toggle}>
+			<Icon onClick={toggle}>
 				<CloseIcon/>
 			</Icon>
 			<SidebarWrapper>
 				<SidebarMenu>
-					<SidebarLink to="login">
+					<SidebarLink to="login" onClick={toggle}>
 						Login
 					</SidebarLink>
-					<SidebarLink to="signup">
-						Signup
+					<SidebarLink to="signup" onClick={toggle}>
+						Sign Up
 					</SidebarLink>
-					<SidebarLink to="books">
+					<SidebarLink to="books" onClick={toggle}>
 						All books
 					</SidebarLink>
-					<SidebarLink to="bestseller">
+					<SidebarLink to="bestseller" onClick={toggle}>
 						Bestsellers
 					</SidebarLink>
 				</SidebarMenu>
@@ -29,4 +29,3 @@ export const Sidebar = () =>{
 		</SidebarContainer>
 	)
 }
-

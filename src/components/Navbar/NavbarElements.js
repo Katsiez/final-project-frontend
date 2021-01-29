@@ -1,17 +1,19 @@
 import styled from "styled-components"
 import { Link as LinkR} from "react-router-dom"
-import { Link as LinkS} from "react-scroll"
+//import { Link as LinkS} from "react-scroll"
 
 export const Nav = styled.nav`
-	background: #38392b;
-	height: 80px;
-	//margin-top: -80px;
+	border-bottom: 0.5px solid #38392b;
+	background: #fff;
+	height: 60px;
+	margin-bottom: -20px;
+	margin-top: 12px;
 	display: flex;
-	justify-contnet: center;
 	align-items: center;
 	posiiton: sticky;
 	top: 0;
-	z-index: 10;
+	z-index: 5;
+	box-shadow:  9px 4px 4px #ccc;
 	@media screen and (max-width: 960px) {
 		transition: 0.8s all ease;
 	}
@@ -28,7 +30,7 @@ export const NavbarContainer = styled.div`
 `;
 
 export const NavLogo = styled(LinkR)`
-	color: #fff;
+	color: #c2cbc8;
 	justify-self: flex-start;
 	cursor: pointer;
 	font-size: 1.5rem;
@@ -37,7 +39,7 @@ export const NavLogo = styled(LinkR)`
 	margin-left: 24px;
 	font-weight: bold;
 	text-decoration: none;
-`;
+	`;
 
 export const MobileIcon = styled.div`
 	display:none;
@@ -58,8 +60,9 @@ export const NavMenu = styled.ul`
 	align-items: center;
 	list-style: none;
 	text-align: center;
-	margin-right: -22px;
-
+	margin: 0 auto;
+	margin-right: 30px;
+	margin-left: 70px;
 	@media screen and (max-width: 768px) {
 		display: none;
 	}
@@ -67,17 +70,20 @@ export const NavMenu = styled.ul`
 
 export const NavItem = styled.li`
 	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;
 
-export const NavLinks = styled(LinkS)`
-	color: #fff;
+export const NavLinks = styled(LinkR)`
+	color: #6e2e2e;
 	display: flex;
 	align-items: center;
 	text-decoration: none;
 	padding: 0 1rem;
+	margin: auto;
 	height: 100%;
 	cursor: pointer;
-
 	&.active {
 		border-bottom: 2px solid red;
 	}
@@ -86,15 +92,18 @@ export const NavLinks = styled(LinkS)`
 export const NavBtn = styled.nav`
 display: flex;
 align-items: center;
-
-&media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
 	display: none;
 }
 `;
 
 export const NavBtnLink = styled(LinkR)`
 border-radius: 50px;
-background: #affff7;
+background: #bd9478;
+position: absolute; 
+text-align: center;
+align-items: center;
+right: 50px;
 white-space: no-wrap;
 padding: 10px 22px;
 color: #010606;
@@ -104,10 +113,12 @@ border: none;
 cursor: pointer;
 transition: all 0.2s ease-in-out;
 text-decoration: none;
-
 &:hover {
 	transition: all 0.2s ease-in-out;
-	background: #affff7;
+	background: #bb7b6a;
 	color: #010606;
+}
+@media screen and (max-width: 768px) {
+	display: none;
 }
 `;

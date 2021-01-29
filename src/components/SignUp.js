@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import { user } from "../reducers/user";
 
 import { LSbutton } from "./LSbutton";
@@ -9,8 +8,8 @@ import { InputField } from "./InputField";
 import styled from "styled-components";
 import { rgba } from "polished";
 import { UserProfile } from "./UserProfile";
-import { Header2 } from "components/Header2";
-import { Footer } from "../components/Footer";
+import { Sidebar } from "components/Sidebar/Sidebar";
+//import { Footer } from "../components/Footer";
 
 const SIGNUP = "http://localhost:8000/signup";
 
@@ -61,13 +60,8 @@ export const SignUp = () => {
 
   return (
     <>
-      <Header2 />
+      <Sidebar />
       <Main>
-        <div className="back">
-          <Link to="/" exact="true">
-            HOME
-          </Link>
-        </div>
         <Text>Welcome, reader.</Text>
         <TextUnder>
           We are happy to have you join us.
@@ -124,7 +118,6 @@ export const SignUp = () => {
           )}
         </Form>
         <LSbutton title="Sign up" />
-        <Footer />
       </Main>
     </>
   );
@@ -133,11 +126,14 @@ const Main = styled.main`
   background-color: #f2c84b;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   overflow: hidden;
   object-fit: cover;
-  width: 100%;
-  height: 100vh;
+  
   z-index: -1;
 `;
 const Form = styled.form`
@@ -179,7 +175,6 @@ const Text = styled.text`
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 90px;
   margin-bottom: -25px;
   letter-spacing: 2px;
   @media (max-width: 950px) {

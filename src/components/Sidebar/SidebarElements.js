@@ -16,7 +16,6 @@ export const SidebarContainer = styled.aside`
 	transition: 0.3s ease-in-out;
 	opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
 	top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
-
 `;
 
 export const CloseIcon = styled(FaTimes)`
@@ -40,10 +39,8 @@ export const SidebarMenu = styled.ul`
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(6, 80px);
 	text-align: center;
-
 	@media screen and (max-width: 480px) {
 		grid-template-rows: repeat(6, 60px);
-
 	}
 `
 export const SidebarLink = styled(LinkS)`
@@ -80,7 +77,6 @@ export const SidebarRoute = styled(LinkR)`
 	cursos: border;
 	transition: all 0.2s ease-in-out;
 	text-decoration: none;
-
 	&:hover {
 		color: #01bf71;
 		transition: all 0.2s ease-in-out;

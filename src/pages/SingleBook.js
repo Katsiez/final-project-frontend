@@ -1,8 +1,14 @@
+import { Navbar } from "components/Navbar/Navbar";
+import { Sidebar } from "components/Sidebar/Sidebar";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
 export const SingleBook = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
   const { bookID } = useParams();
   const [book, setBook] = useState([]);
 
@@ -19,30 +25,21 @@ export const SingleBook = () => {
 
   return (
     <>
-      <div className="back">
-        <Link to="/" exact="true">
-          HOME
-        </Link>
-      </div>
-      <div className="back">
-        <Link to="/books" exact="true">
-          BACK TO BOOKS
-        </Link>
-      </div>
+  <Sidebar isOpen={isOpen} toggle={toggle}/>
+      <Navbar toggle={toggle}/>
       <Main>
         <Text>
           <li>{book.title}</li>
-          <li>Rating:{book.average_rating}</li>
         </Text>
         <Card>
           <Content>
             <Container>
               <Left>
-                <image className="image" src="../assets/girl.jpg" alt="girl"></image>
+              <p className="book-image">{book.img_url}</p>
               </Left>
               <Right>
                 <p className="book-author">{book.authors}</p>
-                <p className="book-genre">{book.genre}</p>
+                <p className="book-rating">{book.average_rating}</p>
                 <Synopsis>{book.synopsis}</Synopsis>
                 <Button>Add to cart</Button>
               </Right>
