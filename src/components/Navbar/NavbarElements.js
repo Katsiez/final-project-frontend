@@ -62,9 +62,12 @@ export const NavMenu = styled.ul`
 	text-align: center;
 	margin: 0 auto;
 	margin-right: 30px;
-	margin-left: 70px;
+	margin-left: 50px;
 	@media screen and (max-width: 768px) {
 		display: none;
+	}
+	@media screen and (max-width: 880px) {
+		margin-left: 20px;
 	}
 `;
 
@@ -92,7 +95,7 @@ export const NavLinks = styled(LinkR)`
 export const NavBtn = styled.nav`
 display: flex;
 align-items: center;
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 880px) {
 	display: none;
 }
 `;

@@ -1,12 +1,15 @@
+import { Footer } from "components/Footer/Footer";
+import { Navbar } from "components/Navbar/Navbar";
+import { Sidebar } from "components/Sidebar/Sidebar";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Navbar } from "./Navbar/Navbar";
-import { Sidebar } from "./Sidebar/Sidebar";
 
-const BOOKS = "http://localhost:8000/books";
+const BESTSELLERS = "http://localhost:8000/books/bestseller/bestseller";
 
-export const Books = () => {
+
+export const Bestsellers = () => {
+  //const { bestseller } = useParams();
   const [books, setBooks] = useState([]);
   const [isOpen, setIsOpen] = useState(false)
   const toggle = () => {
@@ -14,19 +17,22 @@ export const Books = () => {
   }
 
   useEffect(() => {
-    fetch(BOOKS)
-      .then((res) => res.json())
+    fetch(BESTSELLERS)
+      .then((response) => response.json())
       .then((json) => {
         setBooks(json);
+      })
+      .catch(() => {
+        console.error();
       });
   }, []);
 
   return (
     <>
-     <Sidebar isOpen={isOpen} toggle={toggle}/>
+    <Sidebar isOpen={isOpen} toggle={toggle}/>
       <Navbar toggle={toggle}/>
     <Main>
-      <Text>Browse current favourite reads.</Text>
+      <Text>Browse our bestsellers.</Text>
       <TextUnder><p>Choose a book from our current collection,or simply<br/><a class="books-link" href="/signup">sign up</a> to get notified when new books arrive!</p>
           </TextUnder>
       <section className="all-books">
@@ -40,11 +46,12 @@ export const Books = () => {
         ))}
       </section>
     </Main>
+    <Footer/>
     </>
   );
 };
 
-const Main = styled.main`
+const Main = styled.div`
   background-color: #bec4bf;
   //fix the white space there
 `;

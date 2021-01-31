@@ -5,11 +5,11 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { user } from "./reducers/user";
 
 import { HomePage } from "./pages/HomePage";
-import { Login } from "./components/Login";
-import { SignUp } from "./components/SignUp";
-import { Books } from "./components/Books"
-import { SingleBook } from "./pages/SingleBook"
-import { Bestsellers } from "./pages/Bestsellers"
+
+import { AllBooks } from "./pages/Books/AllBooks"
+import { SingleBook } from "./pages/Books/SingleBook"
+import { Bestsellers } from "./pages/Books/Bestsellers"
+import { Form } from "pages/Authentication/Form";
 
 const reducer = combineReducers({ user: user.reducer });
 const store = configureStore({ reducer });
@@ -24,16 +24,8 @@ export const App = () => {
             <HomePage />
           </Route>
 
-          <Route path="/login" exact>
-            <Login />
-          </Route>
-
-          <Route path="/signup" exact>
-            <SignUp />
-          </Route>
-
           <Route path="/books" exact>
-            <Books/>
+            <AllBooks/>
           </Route>
 
           <Route path="/books/id/:bookID" exact>
@@ -43,6 +35,10 @@ export const App = () => {
           <Route path="/books/bestseller" exact>
             <Bestsellers/>
           </Route>
+          
+          <div>
+            <Form/>
+          </div>
           
         </Switch>
       </BrowserRouter> 

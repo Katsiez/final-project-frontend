@@ -19,7 +19,7 @@ export const Navbar = ({ toggle }) => {
       <Nav>
         <NavbarContainer>
           <NavLogo to="/" exact>
-            <img src="../assets/logo.svg" alt=""/>
+            <img src="../assets/logo.svg" alt="" />
           </NavLogo>
           <MobileIcon onClick={toggle}>
             <IconContext.Provider

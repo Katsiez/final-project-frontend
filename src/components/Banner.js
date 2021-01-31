@@ -6,7 +6,7 @@ export const Banner = () => {
 		<>
 		<Main>
 			<Text>
-			<p>Get your first book for 50% OFF with code <strong>PRELOVED</strong> at checkout. </p>
+			<p className="banner-p">Get your first book for 50% OFF with code <strong>PRELOVED</strong> at checkout. </p>
 			</Text>
 		</Main>
 			
@@ -43,8 +43,8 @@ align-items: center;
 justify-content: center;
 background-color: ##303131;
 color: #fafafa;
-@media (max-width: 667px) {
-  font-size: 30px;
+@media screen and (max-width: 667px) {
+  font-size: 16px;
 }
 `
 

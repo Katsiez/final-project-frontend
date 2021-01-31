@@ -26,38 +26,38 @@ export const Footer = () => {
           <FooterLinksWrapper>
             <FooterLinkItems>
               <FooterLinkTitle>About us</FooterLinkTitle>
-              <FooterLink to="/signin">Sign in</FooterLink>
+              <FooterLink to="/signup">Sign in</FooterLink>
               <FooterLink to="/about">About us</FooterLink>
               <FooterLink to="/bestseller">Browse bestsellers</FooterLink>
-              <FooterLink to="/signin">Sign in</FooterLink>
-              <FooterLink to="/signin">Sign in</FooterLink>
+              <FooterLink to="/login">Sign in</FooterLink>
+              <FooterLink to="/login">Sign in</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
               <FooterLinkTitle>About us</FooterLinkTitle>
-              <FooterLink to="/signin">Sign in</FooterLink>
+              <FooterLink to="/signup">Sign in</FooterLink>
               <FooterLink to="/about">About us</FooterLink>
-              <FooterLink to="/bestseller">Browse bestsellers</FooterLink>
-              <FooterLink to="/signin">Sign in</FooterLink>
-              <FooterLink to="/signin">Sign in</FooterLink>
+              <FooterLink to="/books/bestseller">Browse bestsellers</FooterLink>
+              <FooterLink to="/login">Sign in</FooterLink>
+              <FooterLink to="/login">Sign in</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
           <FooterLinksWrapper>
             <FooterLinkItems>
               <FooterLinkTitle>About us</FooterLinkTitle>
-              <FooterLink to="/signin">Sign in</FooterLink>
+              <FooterLink to="/signup">Sign in</FooterLink>
               <FooterLink to="/about">About us</FooterLink>
               <FooterLink to="/bestseller">Browse bestsellers</FooterLink>
-              <FooterLink to="/signin">Sign in</FooterLink>
-              <FooterLink to="/signin">Sign in</FooterLink>
+              <FooterLink to="/login">Sign in</FooterLink>
+              <FooterLink to="/login">Sign in</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
               <FooterLinkTitle>Socials</FooterLinkTitle>
               {/* A TAGS FOR ACTUAL LINKS */}
-              <FooterLink to="/signin">Sign in</FooterLink>
+              <FooterLink to="/signup">Sign in</FooterLink>
               <FooterLink to="/about">About us</FooterLink>
               <FooterLink to="/bestseller">Browse bestsellers</FooterLink>
-              <FooterLink to="/signin">Sign in</FooterLink>
-              <FooterLink to="/signin">Sign in</FooterLink>
+              <FooterLink to="/signup">Sign in</FooterLink>
+              <FooterLink to="/signup">Sign in</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
         </FooterLinksContainer>

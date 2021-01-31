@@ -45,9 +45,10 @@ export const FooterLinkItems = styled.div`
 		width: 100%;
 	}
 `;
-export const FooterLinkTitle = styled.h1`
+export const FooterLinkTitle = styled.h3`
 	font-size: 14px;
 	margin-bottom: 16px;
+	color: #fafafa;
 `;
 export const FooterLink = styled(Link)`
 	color: #fff;

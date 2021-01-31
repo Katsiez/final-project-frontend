@@ -1,14 +1,13 @@
-import { Navbar } from "components/Navbar/Navbar";
-import { Sidebar } from "components/Sidebar/Sidebar";
+import { Footer } from "components/Footer/Footer";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Navbar } from "../../components/Navbar/Navbar";
+import { Sidebar } from "../../components/Sidebar/Sidebar";
 
-const BESTSELLERS = "http://localhost:8000/books/bestseller/bestseller";
+const BOOKS = "http://localhost:8000/books";
 
-
-export const Bestsellers = () => {
-  //const { bestseller } = useParams();
+export const AllBooks = () => {
   const [books, setBooks] = useState([]);
   const [isOpen, setIsOpen] = useState(false)
   const toggle = () => {
@@ -16,40 +15,39 @@ export const Bestsellers = () => {
   }
 
   useEffect(() => {
-    fetch(BESTSELLERS)
-      .then((response) => response.json())
+    fetch(BOOKS)
+      .then((res) => res.json())
       .then((json) => {
         setBooks(json);
-      })
-      .catch(() => {
-        console.error();
       });
   }, []);
 
   return (
     <>
-    <Sidebar isOpen={isOpen} toggle={toggle}/>
+  <Sidebar isOpen={isOpen} toggle={toggle}/>
       <Navbar toggle={toggle}/>
     <Main>
-      <Text>Browse our bestsellers.</Text>
+      <Text>Browse current favourite reads.</Text>
       <TextUnder><p>Choose a book from our current collection,or simply<br/><a class="books-link" href="/signup">sign up</a> to get notified when new books arrive!</p>
           </TextUnder>
       <section className="all-books">
         {books.map((book) => (
           <div className="book-card" key={`book${book._id}`}>
-            <Link to={`/books/id/${book.bookID}`}>
-              <p className="book-title">{book.title}</p>
+            <div className="deets"> <Link to={`/books/id/${book.bookID}`}>
+            <p className="book-title">{book.title}</p>
               <p className="book-author">{book.authors}</p>
-            </Link>
+            </Link></div>
+           
           </div>
         ))}
       </section>
     </Main>
+    <Footer/>
     </>
   );
 };
 
-const Main = styled.main`
+const Main = styled.section`
   background-color: #bec4bf;
   //fix the white space there
 `;
