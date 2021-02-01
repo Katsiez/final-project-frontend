@@ -33,11 +33,11 @@ export const AllBooks = () => {
       <section className="all-books">
         {books.map((book) => (
           <div className="book-card" key={`book${book._id}`}>
-            <div className="deets"> <Link to={`/books/id/${book.bookID}`}>
+                {/* <img className="book-image" src={book.imageUrl} alt="book_cover"/> */}
+            <Link to={`/books/id/${book.bookID}`}>
             <p className="book-title">{book.title}</p>
               <p className="book-author">{book.authors}</p>
-            </Link></div>
-           
+            </Link>
           </div>
         ))}
       </section>

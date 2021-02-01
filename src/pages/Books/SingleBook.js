@@ -36,12 +36,14 @@ export const SingleBook = () => {
           <Content>
             <Container>
               <Left>
-              <p className="book-image">{book.img_url}</p>
+                <img className="book-image" src={book.imageUrl} alt="book_cover"/>
               </Left>
-              <Right>
+              <Right> 
+                <Synopsis>
+                <p className="book-genre">{book.genre}</p>
                 <p className="book-author">{book.authors}</p>
                 <p className="book-rating">{book.average_rating}</p>
-                <Synopsis>{book.synopsis}</Synopsis>
+               {book.synopsis}</Synopsis>
                 <Button>Add to cart</Button>
               </Right>
             </Container>
@@ -54,12 +56,12 @@ export const SingleBook = () => {
 };
 
 const Main = styled.main`
-  width: 100%;
+  margin: 50px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 20px;
+  padding: 50px 20px;
   max-width: 715px;
-  position: relative;
+  text-align: left;
 `;
 const Text = styled.li`
   display: flex;
@@ -86,8 +88,9 @@ const Text = styled.li`
   }
 `;
 const Card = styled.section`
+  margin: -25px 0 0 -25px;
   padding: 0;
-  margin: 0;
+  margin: 10px auto;
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -104,9 +107,10 @@ const Content = styled.div`
   align-items: center;
   justify-content: left;
   width: 100%;
+  height: 100%;
   font-family: "Spectral", serif;
   margin: auto;
-  background: #fff;
+  background: #fafafa;
 `;
 
 const Container = styled.div`
@@ -115,38 +119,43 @@ const Container = styled.div`
   margin: 0 auto;
   display: -webkit-flex;
   display: flex;
+  border: 1px solid #f0f0f0;
 `;
 
 const Left = styled.div`
-  padding: 20px;
-  background: #fafafa;
-  -webkit-flex: 1;
-  -ms-flex: 1;
+  width: 40%;
+  background:#f0f0f0;
+  border-right: 1px solid #f0f0f0;
   flex: 1;
 `;
 
 const Right = styled.div`
-  background: #b4bac0;
-  padding: 30px;
+  width: 60%;
+  padding: 15px;
+  font-size: 16px;
   justify-content: center;
 `;
 
 const Button = styled.button`
-  background-color: #f5f5f5;
+  background-color: #18c399;
+  font-family: 'Lato', sans-serif;
   align-items: center;
+  font-weight: 400;
+  color: #2b2b2b;
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 1px;
+  margin: 20px;
   padding: 8px;
   border: none;
   &:hover {
     cursor: pointer;
-    background-color: #fafafa;
+    background-color: #18c3985b;
     transition: ease-in-out 0.3s;
   }
 `;
 
 const Synopsis = styled.p`
   align-itmes: center;
-  padding: 10px;
+  padding: 20px;
 `;

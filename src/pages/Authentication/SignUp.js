@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { user } from 'reducers/user';
 
-const SIGNUP_URL = 'http://localhost:8000/signup';
-
 export const SignUp = ({ setPage }) => {
+  const SIGNUP = 'http://localhost:8000/signup';
+
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
@@ -18,13 +18,14 @@ export const SignUp = ({ setPage }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch(SIGNUP_URL, {
+    fetch(SIGNUP, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: name, password: password })
     })
       .then((res) => {
         if (!res.ok) {
+          //Why does it throw this error automatically when I try to create an account
           throw new Error('Could not create account.');
         }
         return res.json();

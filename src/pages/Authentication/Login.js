@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { user, login } from 'reducers/user';
 
+
 export const Login = ({ setPage }) => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
@@ -18,11 +19,12 @@ export const Login = ({ setPage }) => {
   };
 
   return (
+    <>
     <div className="column">
       <h1>Hey, you.</h1>
       <form onSubmit={handleSubmit}>
         <label>
-        <p className="p-label">Name</p>
+        <p className="p-label">Username</p>
           <input
             type="name"
             value={name}
@@ -47,5 +49,7 @@ export const Login = ({ setPage }) => {
       <p className="p-label">First time here?</p>
       <button className="button-secondary" type="button" onClick={() => setPage('signup')}>Sign up</button>
     </div>
+    </>
   );
 };
+
