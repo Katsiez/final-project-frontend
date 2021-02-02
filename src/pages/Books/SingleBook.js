@@ -1,15 +1,8 @@
-import { Footer } from "components/Footer/Footer";
-import { Navbar } from "components/Navbar/Navbar";
-import { Sidebar } from "components/Sidebar/Sidebar";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
 export const SingleBook = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const toggle = () => {
-    setIsOpen(!isOpen)
-  }
   const { bookID } = useParams();
   const [book, setBook] = useState([]);
 
@@ -26,8 +19,6 @@ export const SingleBook = () => {
 
   return (
     <>
-  <Sidebar isOpen={isOpen} toggle={toggle}/>
-      <Navbar toggle={toggle}/>
       <Main>
         <Text>
           <li>{book.title}</li>
@@ -36,27 +27,31 @@ export const SingleBook = () => {
           <Content>
             <Container>
               <Left>
-                <img className="book-image" src={book.imageUrl} alt="book_cover"/>
+                <img
+                  className="book-image"
+                  src={book.imageUrl}
+                  alt="book_cover"
+                />
               </Left>
-              <Right> 
+              <Right>
                 <Synopsis>
-                <p className="book-genre">{book.genre}</p>
-                <p className="book-author">{book.authors}</p>
-                <p className="book-rating">{book.average_rating}</p>
-               {book.synopsis}</Synopsis>
+                  <p className="book-genre">{book.genre}</p>
+                  <p className="book-author">{book.authors}</p>
+                  <p className="book-rating">{book.average_rating}</p>
+                  {book.synopsis}
+                </Synopsis>
                 <Button>Add to cart</Button>
               </Right>
             </Container>
           </Content>
         </Card>
       </Main>
-      <Footer/>
     </>
   );
 };
 
 const Main = styled.main`
-  margin: 50px;
+  margin: 70px;
   margin-left: auto;
   margin-right: auto;
   padding: 50px 20px;
@@ -124,9 +119,10 @@ const Container = styled.div`
 
 const Left = styled.div`
   width: 40%;
-  background:#f0f0f0;
-  border-right: 1px solid #f0f0f0;
+  background-color: #fafafa;
+  border-right: 1px solid #dddddd;
   flex: 1;
+  margin: auto;
 `;
 
 const Right = styled.div`
@@ -134,11 +130,12 @@ const Right = styled.div`
   padding: 15px;
   font-size: 16px;
   justify-content: center;
+  background-color: #f0f0f0;
 `;
 
 const Button = styled.button`
   background-color: #18c399;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   align-items: center;
   font-weight: 400;
   color: #2b2b2b;

@@ -1,20 +1,12 @@
-import { Footer } from "components/Footer/Footer";
-import { Navbar } from "components/Navbar/Navbar";
-import { Sidebar } from "components/Sidebar/Sidebar";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const BESTSELLERS = "http://localhost:8000/books/bestseller/bestseller";
 
-
 export const Bestsellers = () => {
   //const { bestseller } = useParams();
   const [books, setBooks] = useState([]);
-  const [isOpen, setIsOpen] = useState(false)
-  const toggle = () => {
-    setIsOpen(!isOpen)
-  }
 
   useEffect(() => {
     fetch(BESTSELLERS)
@@ -29,24 +21,29 @@ export const Bestsellers = () => {
 
   return (
     <>
-    <Sidebar isOpen={isOpen} toggle={toggle}/>
-      <Navbar toggle={toggle}/>
-    <Main>
-      <Text>Browse our bestsellers.</Text>
-      <TextUnder><p>Choose a book from our current collection,or simply<br/><a class="books-link" href="/signup">sign up</a> to get notified when new books arrive!</p>
-          </TextUnder>
-      <section className="all-books">
-        {books.map((book) => (
-          <div className="book-card" key={`book${book._id}`}>
-            <Link to={`/books/id/${book.bookID}`}>
-              <p className="book-title">{book.title}</p>
-              <p className="book-author">{book.authors}</p>
-            </Link>
-          </div>
-        ))}
-      </section>
-    </Main>
-    <Footer/>
+      <Main>
+        <Text>Browse our bestsellers.</Text>
+        <TextUnder>
+          <p>
+            Choose a book from our current collection,or simply
+            <br />
+            <a class="books-link" href="/signup">
+              sign up
+            </a>{" "}
+            to get notified when new books arrive!
+          </p>
+        </TextUnder>
+        <section className="all-books">
+          {books.map((book) => (
+            <div className="book-card" key={`book${book._id}`}>
+              <Link to={`/books/id/${book.bookID}`}>
+                <p className="book-title">{book.title}</p>
+                <p className="book-author">{book.authors}</p>
+              </Link>
+            </div>
+          ))}
+        </section>
+      </Main>
     </>
   );
 };
@@ -58,7 +55,7 @@ const Main = styled.div`
 const Text = styled.title`
   display: flex;
   text-align: center;
-    padding: 60px 0 40px;
+  padding: 60px 0 40px;
   font-size: 50px;
   flex-direction: column;
   color: #222;

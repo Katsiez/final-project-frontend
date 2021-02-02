@@ -1,21 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Navbar } from "../components/Navbar/Navbar";
-import { Sidebar } from "components/Sidebar/Sidebar";
-import { Banner } from "components/Banner";
-import { Footer } from "components/Footer/Footer";
 
 export const HomePage = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
   return (
     <>
-      <Banner />
-      <Sidebar isOpen={isOpen} toggle={toggle} />
-      <Navbar toggle={toggle} />
       <TextSection>
         <Text>Books were always cool.</Text>
         <TextUnder>
@@ -26,7 +15,6 @@ export const HomePage = () => {
       </TextSection>
       <IntroPage />
       <BlockSection />
-      <Footer />
     </>
   );
 };
@@ -45,7 +33,7 @@ const IntroPage = styled.section`
   position: relative;
   // @media screen and (max-width: 667px) {
   //  display:none;
-    
+
   // }
   @media screen and (max-width: 768px) {
     background-image: url("${process.env.PUBLIC_URL + "../assets/green.jpg"}");
