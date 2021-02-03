@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
+//import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
+import { FavIcon} from "lib/FavIcon"
 import styled from "styled-components";
 
 const BOOKS = "http://localhost:8000/books";
 
 export const AllBooks = () => {
   const [books, setBooks] = useState([]);
+  //const dispatch = useDispatch()
 
   useEffect(() => {
     fetch(BOOKS)
@@ -36,6 +39,7 @@ export const AllBooks = () => {
               <Link to={`/books/id/${book.bookID}`}>
                 <p className="book-title">{book.title}</p>
                 <p className="book-author">{book.authors}</p>
+                <FavIcon book={book}/>
               </Link>
             </div>
           ))}
