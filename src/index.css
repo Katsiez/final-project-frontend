@@ -1,15 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 * {
   box-sizing: border-box;
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
 }
 html {
   height: 100%;
   width: 100%;
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
   margin: 0;
   height: 100%;
   overflow-x: hidden;
@@ -18,7 +19,7 @@ body {
 h1,
 h2 {
   letter-spacing: 1px;
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
   margin: 50px auto;
 }
 
@@ -29,19 +30,19 @@ h1 {
   margin: 50px auto;
 }
 @media only screen and (max-width: 768px) {
-    h1 {
-      font-size: 30px;
-}
+  h1 {
+    font-size: 30px;
+  }
 }
 h4 {
   margin: 16px 0;
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
 }
 
 p {
   margin: 0;
   color: rgba(0, 0, 0, 0.87);
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
 }
 
 .banner-p {
@@ -70,7 +71,7 @@ main {
 /* INPUT  */
 button,
 input {
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
   font-size: 1.2rem;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -90,7 +91,7 @@ button {
   color: #fff;
   font-weight: initial;
   text-transform: uppercase;
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
   letter-spacing: 2px;
   margin-top: 25px;
 }
@@ -202,7 +203,7 @@ ul,
 li {
   list-style: none;
   list-style-type: none;
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
   text-rendering: geometricprecision;
   -webkit-font-smoothing: antialiased;
 }
@@ -236,19 +237,17 @@ a.link:hover {
 
 .all-books {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  width: 60%;
-  margin: auto;
-  justify-content: space-around;
-  font-family: "Spectral", serif;
+  margin: 50px;
+  padding: 40px;
+  font-family: "Lora", serif; 
 }
 
 .book-card {
   border: 1px solid #f0f0f0;
   box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.24);
   background-color: white;
-  width: 20%;
+  min-width: 20%;
   height: 30vh;
   max-height: 25vh;
   max-width: 500px;
@@ -257,13 +256,29 @@ a.link:hover {
   font-size: 18px;
   padding: 20px 8px;
 }
+.book-card-all {
+  display: flex;
+  flex-direction: column;
+  min-height: 20vh;
+  width: 20%;
+  border: 1px solid #f0f0f0;
+}
+@media only screen and (max-width: 1024px) {
+  .book-card-all {
+    width: 100%;
+    margin: auto;
+    min-height: 20vh;
+    justify-content: space-evenly;
+  }
+}
 .book-card:hover {
   opacity: 0.5;
   cursor: pointer;
   transition: ease-in-out 0.3s;
   transform: scale(1.1);
-  border:none;
+  border: none;
 }
+
 .book-image {
   width: 200px;
   height: 300px;
@@ -273,23 +288,50 @@ a.link:hover {
   margin-right: auto;
   padding-top: 10px;
   padding-bottom: 10px;
-
 }
+.book-image-all {
+  width: 200px;
+  height: 300px;
+  z-index: 10;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+}
+.book-image-all:hover {
+  opacity: 0.5;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+  transform: scale(1);
+  border: none;
+}
+
 .book-title {
   font-weight: bold;
   font-size: 16px;
   text-align: left;
 }
+.book-title:hover {
+  text-decoration: underline;
+}
+.book-info {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+}
 
 .book-author {
   color: #141313;
   text-decoration: none;
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
   font-size: 16px;
-  text-align: left;
+}
+.book-author:hover {
+  color: #18c399;
 }
 .book-rating {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   margin-bottom: 15px;
 }
 @media only screen and (max-width: 480px) {
@@ -298,20 +340,20 @@ a.link:hover {
     margin: 0;
     min-height: 25vh;
     justify-content: space-evenly;
-}
-.book-card {
-  width: 40%;
-  margin: 0 10px 10px 10px;
-  text-align: left;
-  font-size: 15px;
-  padding: 10px 8px;
-}
-.book-card:hover {
-  opacity: 0.5;
-  cursor: pointer;
-  transition: ease-in-out 0.3s;
-  border:none;
-}
+  }
+  .book-card {
+    width: 40%;
+    margin: 0 10px 10px 10px;
+    text-align: left;
+    font-size: 15px;
+    padding: 10px 8px;
+  }
+  .book-card:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    border: none;
+  }
 }
 @media only screen and (max-width: 768px) {
   .all-books {
@@ -319,21 +361,21 @@ a.link:hover {
     margin: auto;
     min-height: 25vh;
     justify-content: space-evenly;
-}
-.book-card {
-  min-width: 30%;
-  min-height: 35vh;
-  margin: 0 7px 10px;
-  text-align: left;
-  font-size: 15px;
-  padding: 10px 8px;
-}
-.book-card:hover {
-  opacity: 0.5;
-  cursor: pointer;
-  transition: ease-in-out 0.3s;
-  border:none;
-}
+  }
+  .book-card {
+    min-width: 30%;
+    min-height: 35vh;
+    margin: 0 7px 10px;
+    text-align: left;
+    font-size: 15px;
+    padding: 10px 8px;
+  }
+  .book-card:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    border: none;
+  }
 }
 @media only screen and (max-width: 1024px) {
   .all-books {
@@ -341,21 +383,21 @@ a.link:hover {
     margin: auto;
     min-height: 20vh;
     justify-content: space-evenly;
-}
-.book-card {
-  min-width: 30%;
-  min-height: 30vh;
-  margin: 0 7px 10px;
-  text-align: left;
-  font-size: 15px;
-  padding: 10px 8px;
-}
-.book-card:hover {
-  opacity: 0.5;
-  cursor: pointer;
-  transition: ease-in-out 0.3s;
-  border:none;
-}
+  }
+  .book-card {
+    min-width: 30%;
+    min-height: 30vh;
+    margin: 0 7px 10px;
+    text-align: left;
+    font-size: 15px;
+    padding: 10px 8px;
+  }
+  .book-card:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    border: none;
+  }
 }
 @media only screen and (max-width: 1200px) {
   .all-books {
@@ -363,25 +405,25 @@ a.link:hover {
     margin: auto;
     min-height: 25vh;
     justify-content: space-evenly;
-}
-.book-card {
-  min-height: 20vh;
-  width: 35%;
-  margin: 0 7px 10px;
-  text-align: left;
-  font-size: 15px;
-  padding: 10px 8px;
-}
-.book-card:hover {
-  opacity: 0.5;
-  cursor: pointer;
-  transition: ease-in-out 0.3s;
-  border:none;
-}
+  }
+  .book-card {
+    min-height: 20vh;
+    width: 35%;
+    margin: 0 7px 10px;
+    text-align: left;
+    font-size: 15px;
+    padding: 10px 8px;
+  }
+  .book-card:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    border: none;
+  }
 }
 .book-genre {
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   align-items: center;
   text-align: center;
   font-weight: 400;
@@ -397,16 +439,16 @@ a.link:hover {
 .back {
   padding: 15px;
   margin-left: 15px;
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
   font-size: 20px;
   color: #000;
 }
 
-img.image{
+img.image {
   box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.24);
 }
 
 a.books-link:hover {
   text-decoration: underline 1px solid;
-  color:  #222;
+  color: #222;
 }

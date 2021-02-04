@@ -52,7 +52,7 @@ const IntroPage = styled.section`
 `;
 
 const AllBooks = styled(Link)`
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
   font-size: 20px;
   line-height: 1.2em;
   display: flex;
@@ -94,7 +94,7 @@ const BlockSection = styled.section`
 `;
 
 const Text = styled.p`
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
   font-size: 90px;
   font-weight: bolder;
   display: flex;
@@ -110,7 +110,7 @@ const Text = styled.p`
   }
 `;
 const TextUnder = styled.p`
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
   font-size: 25px;
   font-weight: lighter;
   line-height: 1.2em;

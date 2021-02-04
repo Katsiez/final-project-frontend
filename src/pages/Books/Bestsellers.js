@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+//import { FavIcon } from "lib/FavIcon";
+import { Button } from "./SingleBook";
 
 const BESTSELLERS = "http://localhost:8000/books/bestseller/bestseller";
 
@@ -10,7 +12,7 @@ export const Bestsellers = () => {
 
   useEffect(() => {
     fetch(BESTSELLERS)
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((json) => {
         setBooks(json);
       })
@@ -21,37 +23,42 @@ export const Bestsellers = () => {
 
   return (
     <>
-      <Main>
-        <Text>Browse our bestsellers.</Text>
-        <TextUnder>
-          <p>
-            Choose a book from our current collection,or simply
-            <br />
-            <a class="books-link" href="/signup">
-              sign up
-            </a>{" "}
-            to get notified when new books arrive!
-          </p>
-        </TextUnder>
-        <section className="all-books">
-          {books.map((book) => (
-            <div className="book-card" key={`book${book._id}`}>
+      <Text>Browse our bestsellers.</Text>
+      <TextUnder>
+        <p>
+          Choose a book from our current collection,or simply
+          <br />
+          <a class="books-link" href="/signup">
+            sign up
+          </a>{" "}
+          to get notified when new books arrive!
+        </p>
+      </TextUnder>
+      <section className="all-books">
+        {books.map((book) => (
+          <div className="book-card-all" key={`book${book._id}`}>
+            <Link to={`/books/id/${book.bookID}`}>
+              <img
+                className="book-image-all"
+                src={book.imageUrl}
+                alt="book_cover"
+              />
+            </Link>
+            <div className="book-info">
               <Link to={`/books/id/${book.bookID}`}>
                 <p className="book-title">{book.title}</p>
                 <p className="book-author">{book.authors}</p>
               </Link>
+              {/* <FavIcon book={book} /> */}
             </div>
-          ))}
-        </section>
-      </Main>
+            <Button>Add to cart</Button>
+          </div>
+        ))}
+      </section>
     </>
   );
 };
 
-const Main = styled.div`
-  background-color: #bec4bf;
-  //fix the white space there
-`;
 const Text = styled.title`
   display: flex;
   text-align: center;
@@ -60,7 +67,7 @@ const Text = styled.title`
   flex-direction: column;
   color: #222;
   font-weight: bold;
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -82,7 +89,7 @@ const TextUnder = styled.title`
   margin-bottom: 20px;
   line-height: 2rem;
   color: #222;
-  font-family: "Spectral", serif;
+  font-family: "Lora", serif;
   align-items: center;
   justify-content: center;
   text-align: center;

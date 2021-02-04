@@ -37,7 +37,7 @@ export const SingleBook = () => {
                 <Synopsis>
                   <p className="book-genre">{book.genre}</p>
                   <p className="book-author">{book.authors}</p>
-                  <p className="book-rating">{book.average_rating}</p>
+                  <p className="book-rating">Average rating: {book.average_rating}</p>
                   {book.synopsis}
                 </Synopsis>
                 <Button>Add to cart</Button>
@@ -133,7 +133,7 @@ const Right = styled.div`
   background-color: #f0f0f0;
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   background-color: #18c399;
   font-family: "Lato", sans-serif;
   align-items: center;
@@ -143,6 +143,7 @@ const Button = styled.button`
   font-size: 12px;
   letter-spacing: 1px;
   margin: 20px;
+  margin-top: 4px;
   padding: 8px;
   border: none;
   &:hover {
