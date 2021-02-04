@@ -103,11 +103,11 @@ align-items: center;
 export const NavBtnLink = styled(LinkR)`
 border-radius: 50px;
 background: #bd9478;
-position: absolute; 
-text-align: center;
-align-items: center;
-right: 50px;
-white-space: no-wrap;
+// position: absolute; 
+// text-align: center;
+// align-items: center;
+// right: 50px;
+// white-space: no-wrap;
 padding: 10px 22px;
 color: #010606;
 font-size: 16px;

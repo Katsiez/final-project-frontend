@@ -12,6 +12,8 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./NavbarElements";
+import { BiCartAlt } from "react-icons/bi";
+import { Link } from "react-scroll";
 
 export const Navbar = ({ toggle }) => {
   return (
@@ -40,6 +42,7 @@ export const Navbar = ({ toggle }) => {
           </NavMenu>
           <NavBtn>
             <NavBtnLink to="/signup">Login / Sign up</NavBtnLink>
+            <NavBtnLink><Link><BiCartAlt size={20}/></Link></NavBtnLink>
           </NavBtn>
         </NavbarContainer>
       </Nav>

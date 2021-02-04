@@ -20,6 +20,13 @@ export const AllBooks = () => {
       });
   }, []);
 
+  //Randomize price for all books
+  const Random = (props) => {
+    const precision = 100; // 2 decimals
+    const randomnum = Math.floor(Math.random() * (10 * precision - 1 * precision) + 1 * precision) / (1*precision); 
+    return <div>{randomnum}€</div>;
+  }
+
   return (
     <>
       <Text>Browse current favourite reads.</Text>
@@ -49,6 +56,9 @@ export const AllBooks = () => {
                 <p className="book-author">{book.authors}</p>
               </Link>
               <FavIcon book={book} />
+              <div className="random-num">
+                <Random/>
+              </div>
               <Button>Add to cart</Button>
             </div>
           </div>

@@ -22,6 +22,9 @@ export const cart = createSlice({
 			} else if (existingBook) {
 				existingBook.quantity -=1
 			}
-		}
+		},
+		removeAll: (state, action) => {
+			state.items = []
+		  }
 	}
 })

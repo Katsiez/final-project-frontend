@@ -17,6 +17,13 @@ export const SingleBook = () => {
       });
   }, [bookID]);
 
+  //Randomize price for all books
+  const Random = (props) => {
+    const precision = 100; // 2 decimals
+    const randomnum = Math.floor(Math.random() * (10 * precision - 1 * precision) + 1 * precision) / (1*precision); 
+    return <div>{randomnum}€</div>;
+  }
+
   return (
     <>
       <Main>
@@ -40,7 +47,11 @@ export const SingleBook = () => {
                   <p className="book-rating">Average rating: {book.average_rating}</p>
                   {book.synopsis}
                 </Synopsis>
-                <Button>Add to cart</Button>
+                <Button>
+                <div className="random-num">
+                <Random/>
+              </div>
+                  Add to cart</Button>
               </Right>
             </Container>
           </Content>
