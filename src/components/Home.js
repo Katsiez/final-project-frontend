@@ -17,7 +17,14 @@ import { Navbar } from "./Navbar/Navbar";
 import { Footer } from "./Footer/Footer";
 
 const reducer = combineReducers({ user: user.reducer, fav: fav.reducer });
-const store = configureStore({ reducer });
+const persistedState = localStorage.getItem("reduxState")
+  ? JSON.parse(localStorage.getItem("reduxState"))
+  : {};
+
+const store = configureStore({ reducer, preloadedState: persistedState });
+store.subscribe(() => {
+  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
+});
 
 export const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
