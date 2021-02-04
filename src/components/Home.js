@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { user } from "../reducers/user";
 import { fav } from "../reducers/fav";
+import { cart } from "../reducers/cart"
 
 import { HomePage } from "../pages/HomePage";
 
@@ -16,7 +17,7 @@ import { Sidebar } from "./Sidebar/Sidebar";
 import { Navbar } from "./Navbar/Navbar";
 import { Footer } from "./Footer/Footer";
 
-const reducer = combineReducers({ user: user.reducer, fav: fav.reducer });
+const reducer = combineReducers({ user: user.reducer, fav: fav.reducer, cart: cart.reducer });
 const persistedState = localStorage.getItem("reduxState")
   ? JSON.parse(localStorage.getItem("reduxState"))
   : {};

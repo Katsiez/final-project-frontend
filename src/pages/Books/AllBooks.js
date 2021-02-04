@@ -5,6 +5,7 @@ import { FavIcon } from "lib/FavIcon";
 import { Button } from "./SingleBook";
 
 import styled from "styled-components";
+import { StarRating } from "components/StarRating";
 
 const BOOKS = "http://localhost:8000/books";
 
@@ -55,6 +56,7 @@ export const AllBooks = () => {
                 <p className="book-title">{book.title}</p>
                 <p className="book-author">{book.authors}</p>
               </Link>
+              <p><StarRating/></p>
               <FavIcon book={book} />
               <div className="random-num">
                 <Random/>

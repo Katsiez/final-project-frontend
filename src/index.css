@@ -263,6 +263,14 @@ a.link:hover {
   width: 25%;
   border: 1px solid #f0f0f0;
 }
+@media only screen and (max-width: 1024px) {
+  .book-card-all {
+    width: 100%;
+    margin: auto;
+    min-height: 20vh;
+    justify-content: space-evenly;
+  }
+}
 .book-card:hover {
   opacity: 0.5;
   cursor: pointer;
@@ -325,12 +333,6 @@ a.link:hover {
 .book-rating {
   font-family: "Lato", sans-serif;
   margin-bottom: 15px;
-}
-.random-num {
-  color: #fe0072;
-  font-size: 25px;
-  text-align: center;
-  letter-spacing: 1.2px;
 }
 @media only screen and (max-width: 480px) {
   .all-books {
@@ -434,6 +436,16 @@ a.link:hover {
   font-size: 12px;
   letter-spacing: 1.2px;
 }
+.book-rating {
+  font-family: "Lato", sans-serif;
+  margin-bottom: 15px;
+}
+.random-num {
+  color: #fe0072;
+  font-size: 25px;
+  text-align: center;
+  letter-spacing: 1.2px;
+}
 .back {
   padding: 15px;
   margin-left: 15px;
@@ -449,4 +461,14 @@ img.image {
 a.books-link:hover {
   text-decoration: underline 1px solid;
   color: #222;
+}
+
+input[type="radio"] {
+  display: none;
+  text-decoration: none;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 200ms;
 }

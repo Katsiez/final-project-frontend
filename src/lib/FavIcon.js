@@ -22,11 +22,11 @@ export const FavIcon = ({ book }) => {
     <div>
       {favouriteItem ? (
         <Icon type="button" onClick={toggleRemoveFav}>
-          <HiHeart/>
+          <HiHeart color={`#a83f39`}/>
         </Icon>
       ) : (
         <Icon type="button" onClick={toggleFav}>
-          <HiOutlineHeart />
+          <HiOutlineHeart color={`#222`}/>
         </Icon>
       )}
     </div>
@@ -40,4 +40,7 @@ const Icon = styled.button`
   margin: 0;
   padding: 0;
   outline: none;
+  &:hover {
+    opacity: 0.3;
+  }
 `;
