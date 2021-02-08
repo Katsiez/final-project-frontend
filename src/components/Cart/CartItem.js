@@ -4,13 +4,20 @@ import { useDispatch } from 'react-redux';
 
 export const CartItem = ({ book }) => {
   const dispatch = useDispatch()
+
+  const Random = () => {
+    const precision = 100; // 2 decimals
+    const randomnum = Math.floor(Math.random() * (10 * precision - 1 * precision) + 1 * precision) / (1*precision); 
+    return <div>{randomnum}€</div>;
+  }
+
   return (
     <div>
       <div>
 	  	<p>{book.imageUrl}</p>
         <p>{book.title} by {book.authors}</p>
         <p>x{book.quantity}</p>
-        <p> = {book.price * book.quantity}:-</p>
+        <p> = {<Random/> * book.quantity}:-</p>
       </div>
 
       <span className="actions">

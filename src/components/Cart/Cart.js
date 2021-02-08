@@ -9,11 +9,18 @@ import { Subtitle } from "lib/Text"
 import { Button } from "lib/Button"
 
 export const Cart = () => {
+
+const Random = () => {
+	const precision = 100; // 2 decimals
+	const randomnum = Math.floor(Math.random() * (10 * precision - 1 * precision) + 1 * precision) / (1*precision); 
+	return <div>{randomnum}€</div>;
+	}
+
   const dispatch = useDispatch()
   const books = useSelector((store) => store.cart.items)
   const open = useSelector((store) => store.ui.openCart)
   const totalPrice = useSelector((store) => (
-	store.cart.items.reduce((total, item) => (total + (item.fields.price * item.quantity)), 0)
+	store.cart.items.reduce((total, item) => (total + (<Random/> * item.quantity)), 0)
   ))
   console.log(books)
 
