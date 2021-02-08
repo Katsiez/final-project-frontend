@@ -3,59 +3,27 @@ import { createSlice } from '@reduxjs/toolkit'
 export const cart = createSlice({
   name: 'cart',
   initialState: {
-    items: []
+    items: [],
   },
   reducers: {
     addItem: (state, action) => {
-      const existingProduct = state.items.find((item) => item.id === action.payload.id)
+      const existingProduct = state.items.find((item) => item.sys.id === action.payload.sys.id)
+      console.log("add", state, action)
 
       if (existingProduct) {
-        existingProduct.quantity += 1
+        existingProduct.quantity += 0
       } else {
         state.items.push({ ...action.payload, quantity: 1 })
       }
     },
     removeItem: (state, action) => {
-      const existingProduct = state.items.find((item) => item.id === action.payload.id)
+      const existingProduct = state.items.find((item) => item.sys.id === action.payload.sys.id)
 
       if (existingProduct && existingProduct.quantity === 1) {
-        state.items = state.items.filter((item) => item.id !== action.payload.id)
+        state.items = state.items.filter((item) => item.sys.id !== action.payload.sys.id)
       } else if (existingProduct) {
         existingProduct.quantity -= 1
       }
-    }
+    },
   }
 })
-
-// import { createSlice } from '@reduxjs/toolkit'
-
-// export const cart = createSlice({
-//   name: 'cart',
-//   initialState: {
-//     books: []
-//   },
-//   reducers: {
-//     addBook: (state, action) => {
-//       console.log(action.payload)
-//       const existinBook = state.books.find((book) => book._id === action.payload._id)
-
-//       if (existinBook) {
-//         existinBook.quantity += 0
-//       } else {
-//         state.books.push({ ...action.payload, quantity: 1 })
-//       }
-//     },
-//     removeBook: (state, action) => {
-//       const existinBook = state.books.find((book) => book._id === action.payload._id)
-
-//       if (existinBook && existinBook.quantity === 1) {
-//         state.books = state.books.filter((book) => book._id !== action.payload._id)
-//       } else if (existinBook) {
-//         existinBook.quantity -= 1
-//       }
-//     },
-//     clearCart: (state) => {
-//       state.books = []
-//     }
-//   }
-// })

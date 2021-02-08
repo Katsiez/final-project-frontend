@@ -2,19 +2,20 @@ import React from 'react'
 import { cart } from 'reducers/cart'
 import { useDispatch } from 'react-redux';
 
-export const CartItem = ({ product }) => {
+export const CartItem = ({ book }) => {
   const dispatch = useDispatch()
   return (
     <div>
       <div>
-        <p>{product.title}</p>
-        <p>x{product.quantity}</p>
-        <p> = {product.price * product.quantity}:-</p>
+	  	<p>{book.imageUrl}</p>
+        <p>{book.title} by {book.authors}</p>
+        <p>x{book.quantity}</p>
+        <p> = {book.price * book.quantity}:-</p>
       </div>
 
       <span className="actions">
-        <button type="button" onClick={() => dispatch(cart.actions.removeItem(product))}>-</button>
-        <button type="button" onClick={() => dispatch(cart.actions.addItem(product))}>+</button>
+        <button type="button" onClick={() => dispatch(cart.actions.removeItem(book))}>-</button>
+        <button type="button" onClick={() => dispatch(cart.actions.addItem(book))}>+</button>
       </span>
     </div>
   )

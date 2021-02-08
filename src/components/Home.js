@@ -17,8 +17,9 @@ import { Banner } from "./Banner";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { Navbar } from "./Navbar/Navbar";
 import { Footer } from "./Footer/Footer";
-//import { ProductDetails } from "./Products/ProductDetails";
+import { BookDetails } from "./Products/BookDetails";
 import { Cart } from './Cart/Cart'
+import { Checkout } from 'pages/Checkout'
 
 const reducer = combineReducers({ user: user.reducer, fav: fav.reducer, cart: cart.reducer, ui: ui.reducer});
 const persistedState = localStorage.getItem("reduxState")
@@ -39,7 +40,7 @@ export const Home = () => {
     <>
       <Provider store={store}>
         <Cart/>
-        {/* <ProductDetails/> */}
+        <BookDetails/>
         <BrowserRouter>
           <Banner />
           <Sidebar isOpen={isOpen} toggle={toggle} />
@@ -59,6 +60,10 @@ export const Home = () => {
 
             <Route path="/books/bestseller" exact>
               <Bestsellers />
+            </Route>
+
+            <Route path="/checkout" exact>
+              <Checkout />
             </Route>
 
             <div>
