@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
-//import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import { FavIcon } from "lib/FavIcon";
 import { Button } from "./SingleBook";
 
 import styled from "styled-components";
 import { StarRating } from "components/StarRating";
+import { cart } from "reducers/cart"
 
 const BOOKS = "http://localhost:8000/books";
 
 export const AllBooks = () => {
+  const dispatch = useDispatch()
   const [books, setBooks] = useState([]);
-  //const dispatch = useDispatch()
 
   useEffect(() => {
     fetch(BOOKS)
@@ -22,7 +23,7 @@ export const AllBooks = () => {
   }, []);
 
   //Randomize price for all books
-  const Random = (props) => {
+  const Random = () => {
     const precision = 100; // 2 decimals
     const randomnum = Math.floor(Math.random() * (10 * precision - 1 * precision) + 1 * precision) / (1*precision); 
     return <div>{randomnum}€</div>;
@@ -61,7 +62,7 @@ export const AllBooks = () => {
               <div className="random-num">
                 <Random/>
               </div>
-              <Button>Add to cart</Button>
+              <Button onClick={() => {dispatch(cart.actions.addItem({book}))}}>Add to cart</Button>
             </div>
           </div>
         ))}

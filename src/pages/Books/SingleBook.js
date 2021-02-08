@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from 'react-redux';
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { cart } from "reducers/cart"
 
 export const SingleBook = () => {
   const { bookID } = useParams();
+  const dispatch = useDispatch()
   const [book, setBook] = useState([]);
 
   useEffect(() => {
@@ -47,11 +50,11 @@ export const SingleBook = () => {
                   <p className="book-rating">Average rating: {book.average_rating}</p>
                   {book.synopsis}
                 </Synopsis>
-                <Button>
+                <Button onClick={() => {dispatch(cart.actions.addItem({book}))}}>
                 <div className="random-num">
                 <Random/>
               </div>
-                  Add to cart</Button>
+              Add to cart</Button>
               </Right>
             </Container>
           </Content>

@@ -3,23 +3,23 @@ import {createSlice} from "@reduxjs/toolkit"
 export const fav = createSlice({
 	name: "fav",
 	initialState: {
-		favItems: []
+		favBooks: []
 	},
 	reducers: {
 		saveFav: (state, action) => {
-			const existingBook = state.favItems.find((item) => item._id === action.payload._id)
+			const existingBook = state.favBooks.find((book) => book._id === action.payload._id)
 			if (existingBook) {
 				existingBook.quantity += 0
 			} else {
-				const newArray = state.favItems.slice()
+				const newArray = state.favBooks.slice()
 				newArray.push({...action.payload, quantity: 1})
-				state.favItems = newArray
+				state.favBooks = newArray
 			}
 		},
 		removeFav: (state, action) => {
-			const existingBook = state.favItems.find((item) => item._id === action.payload._id)
+			const existingBook = state.favBooks.find((book) => book._id === action.payload._id)
 			if (existingBook && existingBook.quantity === 1) {
-				state.favItems = state.favItems.filter((item) => item._id !== action.payload._id)
+				state.favBooks = state.favBooks.filter((book) => book._id !== action.payload._id)
 			} else if (existingBook) {
 				existingBook.quantity -= 1
 			}

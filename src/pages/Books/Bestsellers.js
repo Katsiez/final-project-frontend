@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 //import { FavIcon } from "lib/FavIcon";
 import { Button } from "./SingleBook";
+import { cart } from "reducers/cart"
 
 const BESTSELLERS = "http://localhost:8000/books/bestseller/bestseller";
 
 export const Bestsellers = () => {
   //const { bestseller } = useParams();
+  const dispatch = useDispatch()
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -61,7 +64,7 @@ export const Bestsellers = () => {
                 <Random/>
               </div>
             </div>
-            <Button>Add to cart</Button>
+            <Button onClick={() => {dispatch(cart.actions.addItem({book}))}}>Add to cart</Button>
           </div>
         ))}
       </section>

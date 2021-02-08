@@ -5,6 +5,7 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { user } from "../reducers/user";
 import { fav } from "../reducers/fav";
 import { cart } from "../reducers/cart"
+import { ui } from "../reducers/ui"
 
 import { HomePage } from "../pages/HomePage";
 
@@ -16,8 +17,10 @@ import { Banner } from "./Banner";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { Navbar } from "./Navbar/Navbar";
 import { Footer } from "./Footer/Footer";
+//import { ProductDetails } from "./Products/ProductDetails";
+import { Cart } from './Cart/Cart'
 
-const reducer = combineReducers({ user: user.reducer, fav: fav.reducer, cart: cart.reducer });
+const reducer = combineReducers({ user: user.reducer, fav: fav.reducer, cart: cart.reducer, ui: ui.reducer});
 const persistedState = localStorage.getItem("reduxState")
   ? JSON.parse(localStorage.getItem("reduxState"))
   : {};
@@ -35,6 +38,8 @@ export const Home = () => {
   return (
     <>
       <Provider store={store}>
+        <Cart/>
+        {/* <ProductDetails/> */}
         <BrowserRouter>
           <Banner />
           <Sidebar isOpen={isOpen} toggle={toggle} />
