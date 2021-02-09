@@ -1,11 +1,13 @@
 import React from "react";
-import { FaBars } from "react-icons/fa";
-import { IconContext } from "react-icons";
+import { useDispatch, useSelector} from 'react-redux'
+//import { FaBars } from "react-icons/fa";
+//import { IconContext } from "react-icons";
+import { ui } from 'reducers/ui'
 import {
   Nav,
   NavbarContainer,
   NavLogo,
-  MobileIcon,
+  //MobileIcon,
   NavMenu,
   NavItem,
   NavLinks,
@@ -16,6 +18,9 @@ import { BiCartAlt } from "react-icons/bi";
 //import { Link } from "react-scroll";
 
 export const Navbar = ({ toggle }) => {
+  const dispatch = useDispatch()
+  const totalItems = useSelector((store) => (
+    store.cart.items.reduce((total, item) => (total + (item.quantity)), 0)))
   return (
     <>
       <Nav>
@@ -23,7 +28,7 @@ export const Navbar = ({ toggle }) => {
           <NavLogo to="/">
             <img src="../assets/logo.svg" alt="" />
           </NavLogo>
-          <MobileIcon onClick={toggle}>
+          {/* <MobileIcon onClick={toggle}>
             <IconContext.Provider
               value={{ color: "white", size: "50px", margin: "0 auto" }}
             >
@@ -31,7 +36,7 @@ export const Navbar = ({ toggle }) => {
                 <FaBars />
               </div>
             </IconContext.Provider>
-          </MobileIcon>
+          </MobileIcon> */}
           <NavMenu>
             <NavItem>
               <NavLinks to="/books">All books</NavLinks>
@@ -42,7 +47,7 @@ export const Navbar = ({ toggle }) => {
           </NavMenu>
           <NavBtn>
             <NavBtnLink to="/signup">Login / Sign up</NavBtnLink>
-           <BiCartAlt size={20}/>
+           <BiCartAlt onClick={() => dispatch(ui.actions.openCart())}>Cart({totalItems}) size={20}</BiCartAlt>
           </NavBtn>
         </NavbarContainer>
       </Nav>

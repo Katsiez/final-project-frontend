@@ -40,10 +40,6 @@ p {
   font-family: "Lora", serif;
 }
 
-.banner-p {
-  color: #fafafa;
-}
-
 main {
   max-width: 640px;
   margin: 0 auto;
@@ -129,6 +125,13 @@ button {
   justify-content: center;
   margin: 100px auto;
   font-size: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .welcome {
+    padding: 20px;
+    margin: 50px auto;
+    font-size: 18px;
+  }
 }
 
 hr {

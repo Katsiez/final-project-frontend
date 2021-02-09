@@ -15,10 +15,10 @@ export const Spinner = styled.div`
   top: 35%;
   animation: ${rotate360} 1s linear infinite;
   transform: translateZ(0);
-  border-top: 2px solid #8CA4B3;
-  border-right: 2px solid #8CA4B3;
-  border-bottom: 2px solid #8CA4B3;
-  border-left: 4px solid #8CA4B3;
+  border-top: 2px solid #c2cbc8;
+  border-right: 2px solid #c2cbc8;
+  border-bottom: 2px solid #c2cbc8;
+  border-left: 4px solid #c2cbc8;
   background: transparent;
   width: 100px;
   height: 100px;

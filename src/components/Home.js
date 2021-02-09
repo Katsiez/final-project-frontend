@@ -65,6 +65,10 @@ export const Home = () => {
               <Checkout />
             </Route>
 
+            <Route path="/cart" exact>
+              <Cart />
+            </Route>
+
             <div>
               <Form />
             </div>

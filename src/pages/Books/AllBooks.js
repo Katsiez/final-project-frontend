@@ -71,7 +71,7 @@ export const AllBooks = () => {
               </RandomNumber>
               <ButtonSingle
                 onClick={() => {
-                  dispatch(cart.actions.addItem({ book }));
+                  dispatch(cart.actions.addItem(book));
                 }}
               >
                 Add to cart

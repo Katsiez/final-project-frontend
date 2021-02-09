@@ -31,10 +31,10 @@ const IntroPage = styled.section`
   box-shadow: 5px 15px 25px 20px rgba(0, 0, 0, 0.24);
   margin: 20px auto;
   position: relative;
-  // @media screen and (max-width: 667px) {
-  //  display:none;
-
-  // }
+  @media screen and (max-width: 480px) {
+    width: 350px;
+    height: 700px;
+  }
   @media screen and (max-width: 768px) {
     background-image: url("${process.env.PUBLIC_URL + "../assets/green.jpg"}");
     width: 350px;
@@ -44,8 +44,8 @@ const IntroPage = styled.section`
   }
   @media screen and (max-width: 1201px) {
     background-image: url("${process.env.PUBLIC_URL + "../assets/green.jpg"}");
-    width: 500px;
-    height: 900px;
+    width: 350px;
+    height: 700px;
     background-size: cover;
     background-position: center center;
   }
@@ -100,7 +100,8 @@ const Text = styled.p`
   display: flex;
   width: 80%;
   margin: 20px auto;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
+  padding-top: 40px;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -117,7 +118,7 @@ const TextUnder = styled.p`
   display: flex;
   width: 40%;
   color: #222;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   margin: 15px auto;
   text-align: center;
   align-items: center;
