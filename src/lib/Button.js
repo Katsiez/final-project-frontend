@@ -1,14 +1,16 @@
-import styled from "styled-components";
-import React from "react";
+import styled from 'styled-components'
+import React from 'react'
 
 export const ScrollTopButton = () => {
-  const scrollTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-  return <ScrollButton onClick={scrollTop}>Back to top</ScrollButton>;
-};
+	const scrollTop = () => {
+	  window.scrollTo({ top: 0, behavior: 'smooth' });
+	};
+	return (
+	  <ScrollButton onClick={scrollTop}>Back to top</ScrollButton>
+	)
+  }
 export const Button = styled.button`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 20px;
   border: 1px solid black;
   height: 30px;
@@ -17,14 +19,14 @@ export const Button = styled.button`
   padding: 0 30px;
   outline: none;
   cursor: pointer;
-  transition: all 0.25s ease-in-out;
+  transition: all .25s ease-in-out; 
   &:hover {
-    background: #8ca4b3;
+    background: #dad41e;
   }
-`;
+`
 
 const ScrollButton = styled.button`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 20px 0 40px 0;
   border: 1px solid black;
   height: 30px;
@@ -33,8 +35,8 @@ const ScrollButton = styled.button`
   padding: 0 30px;
   outline: none;
   cursor: pointer;
-  transition: all 0.25s ease-in-out;
+  transition: all .25s ease-in-out; 
   &:hover {
-    background: #8ca4b3;
+    background: #dad41e;
   }
-`;
+`

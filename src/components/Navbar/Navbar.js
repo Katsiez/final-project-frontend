@@ -14,7 +14,7 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./NavbarElements";
-import { BiCartAlt } from "react-icons/bi";
+import { RiShoppingCartLine } from "react-icons/ri";
 //import { Link } from "react-scroll";
 
 export const Navbar = ({ toggle }) => {
@@ -47,7 +47,7 @@ export const Navbar = ({ toggle }) => {
           </NavMenu>
           <NavBtn>
             <NavBtnLink to="/signup">Login / Sign up</NavBtnLink>
-           <BiCartAlt onClick={() => dispatch(ui.actions.openCart())}>Cart({totalItems}) size={20}</BiCartAlt>
+           <RiShoppingCartLine onClick={() => dispatch(ui.actions.openCart())}>Cart({totalItems}) size={20}</RiShoppingCartLine>
           </NavBtn>
         </NavbarContainer>
       </Nav>

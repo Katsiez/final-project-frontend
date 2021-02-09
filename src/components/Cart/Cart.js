@@ -9,7 +9,11 @@ import { Subtitle } from "lib/Text"
 import { Button } from "lib/Button"
 import { RandomPrice } from 'helpers/RandomPrice'
 
+import { FaTimes } from "react-icons/fa";
+import { IconContext } from "react-icons";
+
 export const Cart = () => {
+
   const dispatch = useDispatch()
   const books = useSelector((store) => store.cart.items)
   const open = useSelector((store) => store.ui.openCart)
@@ -25,9 +29,9 @@ export const Cart = () => {
   return (
     <RightCart open={open}>
        <CartContent>
-	   <CloseButton onClick={() => dispatch(ui.actions.closeCart())}>X</CloseButton>
+	   <CloseButton onClick={() => dispatch(ui.actions.closeCart())}><IconContext.Provider value={{ color: "#222"}}><FaTimes/></IconContext.Provider></CloseButton>
       <Line/>
-	  <Subtitle>My bag ({totalItems})</Subtitle>
+	  <Subtitle>My books ({totalItems})</Subtitle>
 	  <CartProducts>
         {books.map((book) => (
           <CartItem key={book._id} book={book} />
@@ -37,7 +41,7 @@ export const Cart = () => {
       <div>
         <div>Total: {totalPrice}:-</div>
 		<BrowserRouter>
-		<ToShop to="/checkout" onClick={() => dispatch(ui.actions.closeCart())}>Checkout</ToShop>
+		<ToShop to="/checkout" onClick={() => dispatch(ui.actions.closeCart())}>CHECKOUT</ToShop>
 		</BrowserRouter>
 		</div>
 	  </CartContent>
@@ -47,7 +51,7 @@ export const Cart = () => {
 
 
 const RightCart = styled.div`
-  background-color: #f9f3ea;
+  background-color: #d6f1e9;
   position: fixed;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
   top: 0;
@@ -73,8 +77,8 @@ const CartContent = styled.div`
 const CloseButton = styled(Button)`
   height: 30px;
   width: 30px;
-  border-radius: 50%;
   padding: 0;
+  border: none;
 `;
 
 const Line = styled.div`
@@ -99,7 +103,7 @@ const ToShop = styled(Link)`
   margin: 20px;
   transition: all .2s ease-in-out; 
   &:hover {
-    background: #8CA4B3;
+    background: #dad41e;
   }
 `;
 

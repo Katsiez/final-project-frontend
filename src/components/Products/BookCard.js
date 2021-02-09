@@ -1,3 +1,4 @@
+import { RandomPrice } from 'helpers/RandomPrice';
 import React from 'react'
 import { BrowserRouter, Link } from 'react-router-dom'
 import styled from 'styled-components/macro';
@@ -17,7 +18,7 @@ export const BookCard = ({ book }) => {
         <BookImg src={book.imageUrl} aria-label={book.title}></BookImg>
         <div>
           <p>{book.title}</p>
-          <p>{book.price}:-</p>
+          <p><RandomPrice/>-</p>
         </div>
       </Link>
       </BrowserRouter>
