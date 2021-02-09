@@ -6,6 +6,7 @@ import { user } from "../reducers/user";
 import { fav } from "../reducers/fav";
 import { cart } from "../reducers/cart"
 import { ui } from "../reducers/ui"
+import { rating } from "../reducers/rating"
 
 import { HomePage } from "../pages/HomePage";
 
@@ -17,11 +18,10 @@ import { Banner } from "./Banner";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { Navbar } from "./Navbar/Navbar";
 import { Footer } from "./Footer/Footer";
-import { BookDetails } from "./Products/BookDetails";
 import { Cart } from './Cart/Cart'
 import { Checkout } from 'pages/Checkout'
 
-const reducer = combineReducers({ user: user.reducer, fav: fav.reducer, cart: cart.reducer, ui: ui.reducer});
+const reducer = combineReducers({ user: user.reducer, fav: fav.reducer, cart: cart.reducer, ui: ui.reducer, rating: rating.reducer});
 const persistedState = localStorage.getItem("reduxState")
   ? JSON.parse(localStorage.getItem("reduxState"))
   : {};
@@ -38,10 +38,9 @@ export const Home = () => {
   };
   return (
     <>
+    <BrowserRouter>
       <Provider store={store}>
         <Cart/>
-        <BookDetails/>
-        <BrowserRouter>
           <Banner />
           <Sidebar isOpen={isOpen} toggle={toggle} />
           <Navbar toggle={toggle} />
@@ -71,8 +70,8 @@ export const Home = () => {
             </div>
           </Switch>
           <Footer />
-        </BrowserRouter>
       </Provider>
+       </BrowserRouter>
     </>
   );
 };

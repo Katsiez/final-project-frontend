@@ -30,7 +30,7 @@ const Main = styled.section`
 		transition: 0.8s all ease;
 	}
 `;
-const Text = styled.text`
+const Text = styled.div`
 font-family: "Spectral", serif;
 font-size: 16px;
 font-weight: light;

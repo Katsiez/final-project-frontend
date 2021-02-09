@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 * {
   box-sizing: border-box;
   font-family: "Lora", serif;
@@ -34,11 +34,6 @@ h1 {
     font-size: 30px;
   }
 }
-h4 {
-  margin: 16px 0;
-  font-family: "Lora", serif;
-}
-
 p {
   margin: 0;
   color: rgba(0, 0, 0, 0.87);
@@ -235,50 +230,6 @@ a.link:hover {
   color: #fff;
 }
 
-.all-books {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 50px;
-  padding: 40px;
-  font-family: "Lora", serif; 
-}
-
-.book-card {
-  border: 1px solid #f0f0f0;
-  box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.24);
-  background-color: white;
-  min-width: 20%;
-  height: 30vh;
-  max-height: 25vh;
-  max-width: 500px;
-  margin: 0 10px 30px 10px;
-  text-align: center;
-  font-size: 18px;
-  padding: 20px 8px;
-}
-.book-card-all {
-  display: flex;
-  flex-direction: column;
-  min-height: 20vh;
-  width: 25%;
-  border: 1px solid #f0f0f0;
-}
-@media only screen and (max-width: 1024px) {
-  .book-card-all {
-    width: 100%;
-    margin: auto;
-    min-height: 20vh;
-    justify-content: space-evenly;
-  }
-}
-.book-card:hover {
-  opacity: 0.5;
-  cursor: pointer;
-  transition: ease-in-out 0.3s;
-  transform: scale(1.1);
-  border: none;
-}
-
 .book-image {
   width: 200px;
   height: 300px;
@@ -306,146 +257,6 @@ a.link:hover {
   border: none;
 }
 
-.book-title {
-  font-weight: bold;
-  font-size: 16px;
-  text-align: left;
-}
-.book-title:hover {
-  text-decoration: underline;
-}
-.book-info {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  padding: 1rem;
-}
-
-.book-author {
-  color: #141313;
-  text-decoration: none;
-  font-family: "Lora", serif;
-  font-size: 16px;
-}
-.book-author:hover {
-  color: #18c399;
-}
-.book-rating {
-  font-family: "Lato", sans-serif;
-  margin-bottom: 15px;
-}
-@media only screen and (max-width: 480px) {
-  .all-books {
-    width: 100%;
-    margin: 0;
-    min-height: 25vh;
-    justify-content: space-evenly;
-  }
-  .book-card {
-    width: 40%;
-    margin: 0 10px 10px 10px;
-    text-align: left;
-    font-size: 15px;
-    padding: 10px 8px;
-  }
-  .book-card:hover {
-    opacity: 0.5;
-    cursor: pointer;
-    transition: ease-in-out 0.3s;
-    border: none;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .all-books {
-    width: 100%;
-    margin: auto;
-    min-height: 25vh;
-    justify-content: space-evenly;
-  }
-  .book-card {
-    min-width: 30%;
-    min-height: 35vh;
-    margin: 0 7px 10px;
-    text-align: left;
-    font-size: 15px;
-    padding: 10px 8px;
-  }
-  .book-card:hover {
-    opacity: 0.5;
-    cursor: pointer;
-    transition: ease-in-out 0.3s;
-    border: none;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  .all-books {
-    width: 100%;
-    margin: auto;
-    min-height: 20vh;
-    justify-content: space-evenly;
-  }
-  .book-card {
-    min-width: 30%;
-    min-height: 30vh;
-    margin: 0 7px 10px;
-    text-align: left;
-    font-size: 15px;
-    padding: 10px 8px;
-  }
-  .book-card:hover {
-    opacity: 0.5;
-    cursor: pointer;
-    transition: ease-in-out 0.3s;
-    border: none;
-  }
-}
-@media only screen and (max-width: 1200px) {
-  .all-books {
-    width: 100%;
-    margin: auto;
-    min-height: 25vh;
-    justify-content: space-evenly;
-  }
-  .book-card {
-    min-height: 20vh;
-    width: 35%;
-    margin: 0 7px 10px;
-    text-align: left;
-    font-size: 15px;
-    padding: 10px 8px;
-  }
-  .book-card:hover {
-    opacity: 0.5;
-    cursor: pointer;
-    transition: ease-in-out 0.3s;
-    border: none;
-  }
-}
-.book-genre {
-  text-transform: uppercase;
-  font-family: "Lato", sans-serif;
-  align-items: center;
-  text-align: center;
-  font-weight: 400;
-  color: #2b2b2b;
-  background-color: #18c3985b;
-  padding: 2px;
-  width: fit-content;
-  margin: 2px;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 1.2px;
-}
-.book-rating {
-  font-family: "Lato", sans-serif;
-  margin-bottom: 15px;
-}
-.random-num {
-  color: #fe0072;
-  font-size: 25px;
-  text-align: center;
-  letter-spacing: 1.2px;
-}
 .back {
   padding: 15px;
   margin-left: 15px;

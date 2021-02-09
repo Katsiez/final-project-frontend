@@ -13,14 +13,14 @@ import {
   NavBtnLink,
 } from "./NavbarElements";
 import { BiCartAlt } from "react-icons/bi";
-import { Link } from "react-scroll";
+//import { Link } from "react-scroll";
 
 export const Navbar = ({ toggle }) => {
   return (
     <>
       <Nav>
         <NavbarContainer>
-          <NavLogo to="/" exact>
+          <NavLogo to="/">
             <img src="../assets/logo.svg" alt="" />
           </NavLogo>
           <MobileIcon onClick={toggle}>
@@ -42,7 +42,7 @@ export const Navbar = ({ toggle }) => {
           </NavMenu>
           <NavBtn>
             <NavBtnLink to="/signup">Login / Sign up</NavBtnLink>
-            <NavBtnLink><Link><BiCartAlt size={20}/></Link></NavBtnLink>
+           <BiCartAlt size={20}/>
           </NavBtn>
         </NavbarContainer>
       </Nav>

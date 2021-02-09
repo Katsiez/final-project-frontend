@@ -7,7 +7,7 @@ export const cart = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      const existingProduct = state.items.find((item) => item.sys.id === action.payload.sys.id)
+      const existingProduct = state.items.find((item) => item._id === action.payload._id)
       console.log("add", state, action)
 
       if (existingProduct) {
@@ -17,10 +17,10 @@ export const cart = createSlice({
       }
     },
     removeItem: (state, action) => {
-      const existingProduct = state.items.find((item) => item.sys.id === action.payload.sys.id)
+      const existingProduct = state.items.find((item) => item._id === action.payload._id)
 
       if (existingProduct && existingProduct.quantity === 1) {
-        state.items = state.items.filter((item) => item.sys.id !== action.payload.sys.id)
+        state.items = state.items.filter((item) => item._id !== action.payload._id)
       } else if (existingProduct) {
         existingProduct.quantity -= 1
       }

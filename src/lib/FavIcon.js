@@ -9,7 +9,7 @@ import styled from "styled-components";
 export const FavIcon = ({ book }) => {
   const dispatch = useDispatch();
   const favouriteItem = useSelector((store) =>
-    store.fav.favItems.find((item) => item._id === book._id)
+    store.fav.favBooks.find((item) => item._id === book._id)
   );
   const toggleFav = () => {
     dispatch(fav.actions.saveFav(book));
