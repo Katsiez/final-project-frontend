@@ -25,46 +25,34 @@ export const Footer = () => {
         <FooterLinksContainer>
           <FooterLinksWrapper>
             <FooterLinkItems>
-              <FooterLinkTitle>About us</FooterLinkTitle>
-              <FooterLink to="/signup">Sign in</FooterLink>
-              <FooterLink to="/about">About us</FooterLink>
-              <FooterLink to="/bestseller">Browse bestsellers</FooterLink>
-              <FooterLink to="/login">Sign in</FooterLink>
-              <FooterLink to="/login">Sign in</FooterLink>
+              <FooterLinkTitle>ACCOUNT</FooterLinkTitle>
+              <FooterLink to="/signup">Sign up</FooterLink>
+              <FooterLink to="/login">Log in</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
-              <FooterLinkTitle>About us</FooterLinkTitle>
-              <FooterLink to="/signup">Sign in</FooterLink>
-              <FooterLink to="/about">About us</FooterLink>
+              <FooterLinkTitle>BOOKS</FooterLinkTitle>
+              <FooterLink to="/books">All books</FooterLink>
               <FooterLink to="/books/bestseller">Browse bestsellers</FooterLink>
-              <FooterLink to="/login">Sign in</FooterLink>
-              <FooterLink to="/login">Sign in</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
           <FooterLinksWrapper>
             <FooterLinkItems>
-              <FooterLinkTitle>About us</FooterLinkTitle>
-              <FooterLink to="/signup">Sign in</FooterLink>
+              <FooterLinkTitle>ABOUT US</FooterLinkTitle>
               <FooterLink to="/about">About us</FooterLink>
-              <FooterLink to="/bestseller">Browse bestsellers</FooterLink>
-              <FooterLink to="/login">Sign in</FooterLink>
-              <FooterLink to="/login">Sign in</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
-              <FooterLinkTitle>Socials</FooterLinkTitle>
+              <FooterLinkTitle>SOCIALS</FooterLinkTitle>
               {/* A TAGS FOR ACTUAL LINKS */}
-              <FooterLink to="/signup">Sign in</FooterLink>
-              <FooterLink to="/about">About us</FooterLink>
-              <FooterLink to="/bestseller">Browse bestsellers</FooterLink>
-              <FooterLink to="/signup">Sign in</FooterLink>
-              <FooterLink to="/signup">Sign in</FooterLink>
+              <FooterLink to="/home">Facebook</FooterLink>
+              <FooterLink to="/home">Instagram</FooterLink>
+              <FooterLink to="/home">Pinterest</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
         </FooterLinksContainer>
 
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to="/">logo</SocialLogo>
+            <SocialLogo to="/">Bookmark Reads</SocialLogo>
             <WebsiteRights>
               rights {new Date().getFullYear()} All rights reserved
             </WebsiteRights>
