@@ -15,7 +15,7 @@ import {
   BookInfo,
   BookTitle,
   BookAuthor,
-  ButtonSingle
+  ButtonSingle,
 } from "lib/BookStyling";
 
 import { RandomNumber, RandomPrice } from "helpers/RandomPrice";

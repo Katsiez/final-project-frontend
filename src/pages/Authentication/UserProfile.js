@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import { user, getSecretMessage, logout } from 'reducers/user';
-import { ShopBooksButton } from 'lib/ShopBooksButton';
+import { user, getSecretMessage, logout } from "reducers/user";
+import { ShopBooksButton } from "lib/ShopBooksButton";
 
-export const UserProfile = ({setPage}) => {
+export const UserProfile = ({ setPage }) => {
   const dispatch = useDispatch();
   const userId = useSelector((store) => store.user.userId);
   const accessToken = useSelector((store) => store.user.accessToken);
@@ -16,7 +16,7 @@ export const UserProfile = ({setPage}) => {
   });
   const handleClick = () => {
     dispatch(logout());
-    setPage('signup');
+    setPage("signup");
   };
 
   return (
@@ -24,8 +24,9 @@ export const UserProfile = ({setPage}) => {
       <h3>{`${secretMessage}`}</h3>
       <p>Browse through our finest selection of books</p>
       <ShopBooksButton to="/books">Shop all books</ShopBooksButton>
-      <button className="button-primary" type="button" onClick={handleClick}>Log out</button>
+      <button className="button-primary" type="button" onClick={handleClick}>
+        Log out
+      </button>
     </div>
   );
 };
-

@@ -29,7 +29,7 @@ export const Subtitle = styled.h3`
   text-align: center;
   font-size: 24px;
   line-height: 36px;
-  color: black;
+  color: #222;
 `;
 
 export const BodyText = styled.p`

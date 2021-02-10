@@ -4,7 +4,6 @@ import { cart } from "reducers/cart";
 import { useDispatch, useSelector } from "react-redux";
 import { Spinner } from "lib/Spinner";
 
-
 import {
   Left,
   Right,
@@ -17,11 +16,11 @@ import {
   ButtonSingle,
   BookGenre,
   BookAuthor,
-  BookRating
+  BookRating,
 } from "lib/BookStyling";
 
 import { RandomNumber, RandomPrice } from "helpers/RandomPrice";
-
+import { FaStar } from "react-icons/fa";
 
 export const SingleBook = () => {
   const { bookID } = useParams();
@@ -71,7 +70,8 @@ export const SingleBook = () => {
                   <BookGenre>{book.genre}</BookGenre>
                   <BookAuthor>{book.authors}</BookAuthor>
                   <BookRating>
-                    Average rating: {book.average_rating}
+                    Average rating: {book.average_rating}{" "}
+                    <FaStar color="#ffcd3c" />
                   </BookRating>
                   {book.synopsis}
                 </Synopsis>
@@ -94,4 +94,3 @@ export const SingleBook = () => {
     </>
   );
 };
-
