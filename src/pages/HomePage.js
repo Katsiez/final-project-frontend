@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { ShopBooksButton } from "lib/ShopBooksButton";
 
 export const HomePage = () => {
   return (
@@ -11,7 +11,7 @@ export const HomePage = () => {
           But you knew that already. Looking for your next cozy read? Check out
           our store and choose a book from the finest picks.
         </TextUnder>
-        <AllBooks to="/books">Shop all books</AllBooks>
+        <ShopBooksButton to="/books">Shop all books</ShopBooksButton>
       </TextSection>
       <IntroPage />
       <BlockSection />
@@ -48,35 +48,6 @@ const IntroPage = styled.section`
     height: 700px;
     background-size: cover;
     background-position: center center;
-  }
-`;
-
-const AllBooks = styled(Link)`
-  font-family: "Lora", serif;
-  font-size: 20px;
-  line-height: 1.2em;
-  display: flex;
-  width: 20%;
-  height: 7vh;
-  color: #222;
-  padding: 2px;
-  background-color: #bd9478;
-  position: relative;
-  margin: 30px auto;
-  margin-bottom: -10px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  &:hover {
-    transition: all 0.3s ease-in-out;
-    background: #bb7b6a;
-    color: #010606;
-  }
-  @media (max-width: 887px) {
-    font-size: 20px;
-    letter-spacing: 1px;
-    width: 70%;
   }
 `;
 
