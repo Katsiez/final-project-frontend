@@ -1,59 +1,69 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import styled from 'styled-components/macro'
-import { CartItem } from './CartItem'
-import { ui } from 'reducers/ui'
-import { Link, BrowserRouter } from 'react-router-dom'
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import styled from "styled-components/macro";
+import { CartItem } from "./CartItem";
+import { ui } from "reducers/ui";
+import { Link, BrowserRouter } from "react-router-dom";
 
-import { Subtitle } from "lib/Text"
-import { Button } from "lib/Button"
-import { RandomPrice } from 'helpers/RandomPrice'
+import { Subtitle } from "lib/Text";
+import { Button } from "lib/Button";
+import { Generate } from "helpers/RandomPrice";
 
 import { FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
 export const Cart = () => {
+  const dispatch = useDispatch();
+  const books = useSelector((store) => store.cart.items);
+  const open = useSelector((store) => store.ui.openCart);
+  const totalPrice = useSelector((store) =>
+    store.cart.items.reduce(
+      (total, item) => total + Generate() * item.quantity,
+      0
+    )
+  );
+  console.log(books);
 
-  const dispatch = useDispatch()
-  const books = useSelector((store) => store.cart.items)
-  const open = useSelector((store) => store.ui.openCart)
-  const totalPrice = useSelector((store) => (
-	store.cart.items.reduce((total, item) => (total + (<RandomPrice/> * item.quantity)), 0)
-  ))
-  console.log(books)
-
-  const totalItems = useSelector((store) => (
-    store.cart.items.reduce((total, item) => (total + (item.quantity)), 0)
-  ))
+  const totalItems = useSelector((store) =>
+    store.cart.items.reduce((total, item) => total + item.quantity, 0)
+  );
 
   return (
     <RightCart open={open}>
-       <CartContent>
-	   <CloseButton onClick={() => dispatch(ui.actions.closeCart())}><IconContext.Provider value={{ color: "#222"}}><FaTimes/></IconContext.Provider></CloseButton>
-      <Line/>
-	  <Subtitle>My books ({totalItems})</Subtitle>
-	  <CartProducts>
-        {books.map((book) => (
-          <CartItem key={book._id} book={book} />
-        ))}
-		</CartProducts>
-      <Line/>
-      <div>
-        <div>Total: {totalPrice}:-</div>
-		<BrowserRouter>
-		<ToShop to="/checkout" onClick={() => dispatch(ui.actions.closeCart())}>CHECKOUT</ToShop>
-		</BrowserRouter>
-		</div>
-	  </CartContent>
+      <CartContent>
+        <CloseButton onClick={() => dispatch(ui.actions.closeCart())}>
+          <IconContext.Provider value={{ color: "#222" }}>
+            <FaTimes />
+          </IconContext.Provider>
+        </CloseButton>
+        <Line />
+        <Subtitle>My books ({totalItems})</Subtitle>
+        <CartProducts>
+          {books.map((book) => (
+            <CartItem key={book._id} book={book} />
+          ))}
+        </CartProducts>
+        <Line />
+        <div>
+          <div>Total: {totalPrice}:-</div>
+          <BrowserRouter>
+            <ToShop
+              to="/checkout"
+              onClick={() => dispatch(ui.actions.closeCart())}
+            >
+              CHECKOUT
+            </ToShop>
+          </BrowserRouter>
+        </div>
+      </CartContent>
     </RightCart>
-  )
-}
-
+  );
+};
 
 const RightCart = styled.div`
   background-color: #d6f1e9;
   position: fixed;
-  transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   top: 0;
   right: 0;
   bottom: 0;
@@ -101,9 +111,8 @@ const ToShop = styled(Link)`
   text-decoration: none;
   color: black;
   margin: 20px;
-  transition: all .2s ease-in-out; 
+  transition: all 0.2s ease-in-out;
   &:hover {
     background: #dad41e;
   }
 `;
-

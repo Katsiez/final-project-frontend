@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-//import { FavIcon } from "lib/FavIcon";
 import { cart } from "reducers/cart";
 
 import {
@@ -64,14 +63,13 @@ export const Bestsellers = () => {
                 <BookTitle>{book.title}</BookTitle>
                 <BookAuthor>{book.authors}</BookAuthor>
               </Link>
-              {/* <FavIcon book={book} /> */}
               <RandomNumber>
                 <RandomPrice />
               </RandomNumber>
             </BookInfo>
             <ButtonSingle
               onClick={() => {
-                dispatch(cart.actions.addItem({ book }));
+                dispatch(cart.actions.addItem(book));
               }}
             >
               Add to cart

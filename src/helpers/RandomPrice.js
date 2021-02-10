@@ -7,6 +7,12 @@ export const RandomPrice = () => {
     return <div>{randomnum}€</div>;
   }
 
+  export const Generate = () => {
+    const precision = 100;
+    return (
+      Math.floor(Math.random() * (10 * precision - 1 * precision) + 1 * precision) / (1*precision)
+    )
+  }
   export const RandomNumber = styled.div`
   color: #fe0072;
   font-size: 25px;

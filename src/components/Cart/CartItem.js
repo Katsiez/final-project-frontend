@@ -5,8 +5,7 @@ import { RandomPrice } from 'helpers/RandomPrice';
 import { Button } from 'lib/Button'
 
 import styled from 'styled-components'
-import { FaPlus } from 'react-icons/fa';
-import { FaMinus } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
 import { IconContext } from "react-icons";
 
 const CartProduct = styled.div`
@@ -29,14 +28,7 @@ const RemoveButton = styled(Button)`
   height: 30px;
   width: 30px;
   padding: 0;
-  margin: 3px;
-  border: none;
-`;
-const AddButton = styled(Button)`
-  height: 30px;
-  width: 30px;
-  padding: 0;
-  margin: 3px;
+  margin: 0 3px;
   border: none;
 `;
 
@@ -62,8 +54,7 @@ export const CartItem = ({ book }) => {
             <p>{book.title}</p>
             <p><RandomPrice/></p>
           </div>
-          <RemoveButton type="button" onClick={() => dispatch(cart.actions.removeItem(book))}><IconContext.Provider value={{ color: "#222"}}><FaMinus/></IconContext.Provider></RemoveButton>
-          <AddButton type="button" onClick={() => dispatch(cart.actions.addItem(book))}><IconContext.Provider value={{ color: "#222"}}><FaPlus/></IconContext.Provider></AddButton>
+          <RemoveButton type="button" onClick={() => dispatch(cart.actions.removeItem(book))}><IconContext.Provider value={{ color: "#222"}}><FaTimes/></IconContext.Provider></RemoveButton>
         </Details>
       </ProductWrapper>
     </CartProduct>
