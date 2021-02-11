@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { CartItem } from "./CartItem";
 import { ui } from "reducers/ui";
-import { BrowserRouter } from "react-router-dom";
 
 import { Subtitle } from "lib/Text";
 import { Generate } from "helpers/RandomPrice";
@@ -29,8 +28,6 @@ export const Cart = () => {
       0
     )
   );
-  console.log(books);
-
   const totalItems = useSelector((store) =>
     store.cart.items.reduce((total, item) => total + item.quantity, 0)
   );
@@ -53,14 +50,12 @@ export const Cart = () => {
         <Line />
         <div>
           <div>Total: {totalPrice}€:-</div>
-          <BrowserRouter>
-            <ToShop
-              to="/checkout"
-              onClick={() => dispatch(ui.actions.closeCart())}
-            >
-              CHECKOUT
-            </ToShop>
-          </BrowserRouter>
+          <ToShop
+            to="/checkout"
+            onClick={() => dispatch(ui.actions.closeCart())}
+          >
+            CHECKOUT
+          </ToShop>
         </div>
       </CartContent>
     </RightCart>

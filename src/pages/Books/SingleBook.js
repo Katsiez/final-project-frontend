@@ -38,7 +38,6 @@ export const SingleBook = () => {
     fetch(SINGLE_BOOK)
       .then((res) => res.json())
       .then((json) => {
-        console.log(json);
         setBook(json);
         setLoading(false);
       })

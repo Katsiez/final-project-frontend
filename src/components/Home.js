@@ -19,7 +19,7 @@ import { Sidebar } from "./Sidebar/Sidebar";
 import { Navbar } from "./Navbar/Navbar";
 import { Footer } from "./Footer/Footer";
 import { Cart } from "./Cart/Cart";
-import { Checkout } from "pages/Checkout";
+import {Checkout}  from "pages/Checkout";
 import { About } from "pages/About";
 import { Fiction } from "pages/Books/Fiction";
 
@@ -49,7 +49,8 @@ export const Home = () => {
       <BrowserRouter>
         <Provider store={store}>
           <div>
-            <Cart />
+          <Cart />
+
             <Banner />
             <Sidebar isOpen={isOpen} toggle={toggle} />
             <Navbar toggle={toggle} />
@@ -77,7 +78,7 @@ export const Home = () => {
               <Route path="/checkout" exact>
                 <Checkout />
               </Route>
-
+              
               <Route path="/about" exact>
                 <About />
               </Route>

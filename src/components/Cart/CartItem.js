@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import { cart } from "reducers/cart";
 import { useDispatch } from "react-redux";
 import { RandomPrice } from "helpers/RandomPrice";
@@ -22,8 +23,10 @@ export const CartItem = ({ book }) => {
         <ProductImg src={book.imageUrl} alt={book.title} />
         <Details>
           <div>
+          <Link to={`/books/id/${book.bookID}`}>
             <p className="cart-div">{book.authors}</p>
             <p className="cart-div">{book.title}</p>
+            </Link>
             <p className="cart-div">
               <RandomPrice />
             </p>
