@@ -32,7 +32,7 @@ export const SingleBook = () => {
   const itemAdded = itemsAdded.find((item) => item._id === bookID);
 
   //Fetch
-  const SINGLE_BOOK = `http://localhost:8000/books/book/${bookID}`;
+  const SINGLE_BOOK = `https://final-project-backend-katsiez.herokuapp.com/books/book/${bookID}`;
 
   useEffect(() => {
     fetch(SINGLE_BOOK)

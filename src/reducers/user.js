@@ -34,7 +34,7 @@ export const user = createSlice({
 // THUNKS
 export const getSecretMessage = (userId, accessToken) => {
   return (dispatch) => {
-    fetch(`http://localhost:8000/signup/${userId}/verified`, {
+    fetch(`https://final-project-backend-katsiez.herokuapp.com/signup/${userId}/verified`, {
       method: 'GET',
       headers: { Authorization: accessToken }
     })
@@ -55,7 +55,7 @@ export const getSecretMessage = (userId, accessToken) => {
 
 export const login = (name, password) => {
   return (dispatch) => {
-    fetch('http://localhost:8000/login', {
+    fetch('https://final-project-backend-katsiez.herokuapp.com/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, password })

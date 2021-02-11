@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { user } from 'reducers/user';
 
 export const SignUp = ({ setPage }) => {
-  const SIGNUP = 'http://localhost:8000/signup';
+  const SIGNUP = 'https://final-project-backend-katsiez.herokuapp.com/signup';
 
   const dispatch = useDispatch();
   const [name, setName] = useState('');

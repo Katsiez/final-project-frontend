@@ -1,4 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit"
+//Not currently using this reducer. Need to figure out a way to implement it, it's a bit tricky considering I already have an onClick that isn't toggle.
 
 export const rating = createSlice({
 	name: "rating",

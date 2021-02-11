@@ -20,6 +20,7 @@ import { Navbar } from "./Navbar/Navbar";
 import { Footer } from "./Footer/Footer";
 import { Cart } from "./Cart/Cart";
 import { Checkout } from "pages/Checkout";
+import { About } from "pages/About";
 
 const reducer = combineReducers({
   user: user.reducer,
@@ -73,6 +74,10 @@ export const Home = () => {
 
             <Route path="/cart" exact>
               <Cart />
+            </Route>
+
+            <Route path="/about" exact>
+              <About />
             </Route>
 
             <div>

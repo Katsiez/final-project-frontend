@@ -17,7 +17,7 @@ import {
 
 import { RandomNumber, RandomPrice } from "helpers/RandomPrice";
 
-const BESTSELLERS = "http://localhost:8000/books/bestseller/bestseller";
+const BESTSELLERS = "https://final-project-backend-katsiez.herokuapp.com/books/bestseller/bestseller";
 
 export const Bestsellers = () => {
   //const { bestseller } = useParams();

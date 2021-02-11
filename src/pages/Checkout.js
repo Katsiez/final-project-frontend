@@ -16,9 +16,9 @@ export const Checkout = () => {
           No? Okay then, have a look at our finest selection of books, again.
         </p>
         <ShopBooksButton to="/books">BROWSE BOOKS</ShopBooksButton>
-		<NotFound
+        <NotFound
           src="https://media.giphy.com/media/iJ2VEARf6y3UFnFZj2/giphy.gif"
-		  width='365'
+          width="365"
           alt="mad librarian"
         />
       </HomeSummary>

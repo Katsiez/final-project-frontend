@@ -20,7 +20,7 @@ import {
 
 import { RandomNumber, RandomPrice } from "helpers/RandomPrice";
 
-const BOOKS = "http://localhost:8000/books";
+const BOOKS = "https://final-project-backend-katsiez.herokuapp.com/books";
 
 export const AllBooks = () => {
   const dispatch = useDispatch();
