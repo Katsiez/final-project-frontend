@@ -97,6 +97,21 @@ export const BookCardAll = styled.div`
   }
 `;
 
+export const BookCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 20vh;
+  width: 20%;
+  border: 0.5px solid #636363;
+  background-color: #eef9f6;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    margin: auto;
+    min-height: 20vh;
+    justify-content: space-evenly;
+  }
+`;
+
 export const BookInfo = styled.div`
   display: flex;
   flex: 1 1 auto;
@@ -139,6 +154,9 @@ export const Left = styled.div`
   border-right: 1px solid #dddddd;
   flex: 1;
   margin: auto;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const Right = styled.div`
@@ -147,6 +165,11 @@ export const Right = styled.div`
   font-size: 16px;
   justify-content: center;
   background-color: #f0f0f0;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    padding: 5px;
+    text-align:left;
+  }
 `;
 
 export const TextList = styled.li`

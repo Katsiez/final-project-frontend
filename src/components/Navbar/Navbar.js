@@ -33,6 +33,9 @@ export const Navbar = ({ toggle }) => {
             <NavItem>
               <NavLinks to="/books/bestseller">Bestsellers</NavLinks>
             </NavItem>
+            <NavItem>
+              <NavLinks to="/books/fiction">Fiction</NavLinks>
+            </NavItem>
           </NavMenu>
           <NavBtn>
             <NavBtnLink to="/signup">Login / Sign up</NavBtnLink>

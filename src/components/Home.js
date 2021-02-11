@@ -21,6 +21,7 @@ import { Footer } from "./Footer/Footer";
 import { Cart } from "./Cart/Cart";
 import { Checkout } from "pages/Checkout";
 import { About } from "pages/About";
+import { Fiction } from "pages/Books/Fiction";
 
 const reducer = combineReducers({
   user: user.reducer,
@@ -66,6 +67,10 @@ export const Home = () => {
 
             <Route path="/books/bestseller" exact>
               <Bestsellers />
+            </Route>
+
+            <Route path="/books/fiction" exact>
+              <Fiction />
             </Route>
 
             <Route path="/checkout" exact>

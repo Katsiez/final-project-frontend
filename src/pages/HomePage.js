@@ -19,6 +19,7 @@ export const HomePage = () => {
   );
 };
 
+//HOME PAGE STYLING
 const IntroPage = styled.section`
   display: flex;
   align-items: center;
@@ -96,6 +97,9 @@ const TextUnder = styled.p`
   justify-content: center;
   @media (max-width: 667px) {
     font-size: 18px;
+    width: 70%;
+  }
+  @media screen and (max-width: 880px) {
     width: 70%;
   }
 `;

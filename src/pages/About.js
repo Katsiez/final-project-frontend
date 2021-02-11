@@ -32,7 +32,7 @@ export const About = () => {
         <MainText>
           Having a hard time choosing your next read? Check out our fine
           selection of some of the most popular fiction{" "}
-          <a className="books-link" href="/books">
+          <a className="books-link" href="/books/fiction">
             here.
           </a>{" "}
         </MainText>

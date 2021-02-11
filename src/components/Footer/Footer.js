@@ -33,6 +33,7 @@ export const Footer = () => {
               <FooterLinkTitle>BOOKS</FooterLinkTitle>
               <FooterLink to="/books">All books</FooterLink>
               <FooterLink to="/books/bestseller">Browse bestsellers</FooterLink>
+              <FooterLink to="/books/fiction">Popular fiction</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
           <FooterLinksWrapper>
