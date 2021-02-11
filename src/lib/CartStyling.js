@@ -55,6 +55,8 @@ export const ToShop = styled(Link)`
   text-decoration: none;
   color: black;
   margin: 20px;
+  text-align: center;
+  align-items: center;
   transition: all 0.2s ease-in-out;
   &:hover {
     background: #dad41e;
