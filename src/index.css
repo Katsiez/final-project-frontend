@@ -40,7 +40,13 @@ p {
   font-family: "Lora", serif;
   font-size: 18px;
 }
-
+@media screen and (max-width: 768px) {
+  .cart-div {
+    font-size: 13px;
+    justify-content: center;
+    padding: 2px;
+  }
+}
 main {
   max-width: 640px;
   margin: 0 auto;

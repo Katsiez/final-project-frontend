@@ -22,21 +22,21 @@ export const CartItem = ({ book }) => {
         <ProductImg src={book.imageUrl} alt={book.title} />
         <Details>
           <div>
-            <p>{book.authors}</p>
-            <p>{book.title}</p>
-            <p>
+            <p className="cart-div">{book.authors}</p>
+            <p className="cart-div">{book.title}</p>
+            <p className="cart-div">
               <RandomPrice />
             </p>
           </div>
-          <RemoveButton
-            type="button"
-            onClick={() => dispatch(cart.actions.removeItem(book))}
-          >
-            <IconContext.Provider value={{ color: "#222" }}>
-              <FaTimes />
-            </IconContext.Provider>
-          </RemoveButton>
         </Details>
+        <RemoveButton
+          type="button"
+          onClick={() => dispatch(cart.actions.removeItem(book))}
+        >
+          <IconContext.Provider value={{ color: "#222" }}>
+            <FaTimes />
+          </IconContext.Provider>
+        </RemoveButton>
       </ProductWrapper>
     </CartProduct>
   );

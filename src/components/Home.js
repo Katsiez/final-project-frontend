@@ -48,48 +48,46 @@ export const Home = () => {
     <>
       <BrowserRouter>
         <Provider store={store}>
-          <Cart />
-          <Banner />
-          <Sidebar isOpen={isOpen} toggle={toggle} />
-          <Navbar toggle={toggle} />
-          <Switch>
-            <Route path="/" exact>
-              <HomePage />
-            </Route>
+          <div>
+            <Cart />
+            <Banner />
+            <Sidebar isOpen={isOpen} toggle={toggle} />
+            <Navbar toggle={toggle} />
+            <Switch>
+              <Route path="/" exact>
+                <HomePage />
+              </Route>
 
-            <Route path="/books" exact>
-              <AllBooks />
-            </Route>
+              <Route path="/books" exact>
+                <AllBooks />
+              </Route>
 
-            <Route path="/books/id/:bookID" exact>
-              <SingleBook />
-            </Route>
+              <Route path="/books/id/:bookID" exact>
+                <SingleBook />
+              </Route>
 
-            <Route path="/books/bestseller" exact>
-              <Bestsellers />
-            </Route>
+              <Route path="/books/bestseller" exact>
+                <Bestsellers />
+              </Route>
 
-            <Route path="/books/fiction" exact>
-              <Fiction />
-            </Route>
+              <Route path="/books/fiction" exact>
+                <Fiction />
+              </Route>
 
-            <Route path="/checkout" exact>
-              <Checkout />
-            </Route>
+              <Route path="/checkout" exact>
+                <Checkout />
+              </Route>
 
-            <Route path="/cart" exact>
-              <Cart />
-            </Route>
+              <Route path="/about" exact>
+                <About />
+              </Route>
 
-            <Route path="/about" exact>
-              <About />
-            </Route>
-
-            <div>
-              <Form />
-            </div>
-          </Switch>
-          <Footer />
+              <div>
+                <Form />
+              </div>
+            </Switch>
+            <Footer />
+          </div>
         </Provider>
       </BrowserRouter>
     </>

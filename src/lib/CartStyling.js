@@ -59,6 +59,10 @@ export const ToShop = styled(Link)`
   &:hover {
     background: #dad41e;
   }
+  @media screen and (max-width: 768px) {
+    text-align: center;
+    align-items: center;
+  }
 `;
 
 export const CartProduct = styled.div`
@@ -72,17 +76,29 @@ export const ProductImg = styled.img`
 `;
 
 export const ProductWrapper = styled.div`
-  padding: 10px;
+  padding: 20px;
   display: flex;
   background: white;
+  @media screen and (max-width: 768px) {
+    padding: 12px;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
 `;
 
 export const RemoveButton = styled(Button)`
   height: 30px;
   width: 30px;
   padding: 0;
-  margin: 0 3px;
+  margin: auto;
   border: none;
+  left: 70%;
+  right: 0;
+  position: absolute;
+  @media screen and (max-width: 768px) {
+    height: 20px;
+    width: 20px;
+  }
 `;
 
 export const Details = styled.div`
@@ -90,4 +106,7 @@ export const Details = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    margin-left: 3px;
+  }
 `;
